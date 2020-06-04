@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2020 at 07:47 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.6
+-- Generation Time: Jun 04, 2020 at 08:52 PM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.2.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -166,8 +167,10 @@ INSERT INTO `hero_images` (`id`, `img_src`, `img_src_mob`, `alt_txt`) VALUES
 
 CREATE TABLE `news` (
   `id` int(11) NOT NULL,
-  `file_src` varchar(500) NOT NULL,
+  `heading` varchar(100) NOT NULL,
   `content` longtext NOT NULL,
+  `img_src` varchar(500) NOT NULL,
+  `slug` varchar(100) NOT NULL,
   `date` date NOT NULL,
   `status` varchar(100) NOT NULL DEFAULT 'old'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -176,10 +179,10 @@ CREATE TABLE `news` (
 -- Dumping data for table `news`
 --
 
-INSERT INTO `news` (`id`, `file_src`, `content`, `date`, `status`) VALUES
-(1, 'download.png', 'Some news with a meaningful heading. Some news with a meaningful heading.Some news with a meaningful heading.Some news with a meaningful heading.Some news with a meaningful heading.', '2020-02-18', 'new'),
-(10, 'images.jpg', 'Some news with a meaningful heading. Some news with a meaningful heading.Some news with a meaningful heading.', '2020-02-21', 'new'),
-(11, 'insta.jpg', 'Some news with a meaningful heading.', '2020-05-28', 'new');
+INSERT INTO `news` (`id`, `heading`, `content`, `img_src`, `slug`, `date`, `status`) VALUES
+(1, 'Some news with a meaningful heading. Some news with a', 'Some news with a meaningful heading. Some news with a meaningful heading.Some news with a meaningful heading.Some news with a meaningful heading.Some news with a meaningful heading.', 'download.png', 'Some-news-with-a-meaningful-heading', '2020-02-18', 'new'),
+(10, 'Some news with a meaningful heading. Some news with a', 'Some news with a meaningful heading. Some news with a meaningful heading.Some news with a meaningful heading.', 'images.jpg', 'Some-news-with-a-meaningful-heading2', '2020-02-21', 'new'),
+(11, 'Some news with a meaningful heading. Some news with a', 'Some news with a meaningful heading.', 'insta.jpg', 'Some-news-with-a-meaningful-heading3', '2020-05-28', 'old');
 
 -- --------------------------------------------------------
 
@@ -200,8 +203,8 @@ CREATE TABLE `notice` (
 --
 
 INSERT INTO `notice` (`id`, `content`, `date`, `file_src`, `status`) VALUES
-(1, 'Some notice with a meaningful heading. Some notice with a meaningful heading. Some notice with a meaningful heading.', '2020-02-18', 'test.jpg', 'new'),
-(11, 'Some notice with a meaningful heading. Some notice with a meaningful heading. Some notice with a meaningful heading.', '2020-06-01', 'test2.jpg', 'new'),
+(1, 'Some notice with a meaningful heading. Some notice with a meaningful heading. Some notice with a meaningful heading.', '2020-02-18', 'test.jpg', 'old'),
+(11, 'Some notice with a meaningful heading. Some notice with a meaningful heading. Some notice with a meaningful heading.', '2020-06-01', 'test2.jpg', 'old'),
 (12, 'Some notice with a meaningful heading.', '2020-05-13', 'wa.jpg', 'new');
 
 -- --------------------------------------------------------
@@ -345,7 +348,8 @@ ALTER TABLE `hero_images`
 -- Indexes for table `news`
 --
 ALTER TABLE `news`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `slug` (`slug`);
 
 --
 -- Indexes for table `notice`

@@ -12,8 +12,9 @@ class Gallery extends MY_Controller {
 		$profile=$this->fetch->getWebProfile();
 		$categories=$this->fetch->getInfo('gallery_categories');
 		foreach($categories as $category){
-			$category->thumb = $this->fetch->getInfoById('gallery','gall_cat_id',$category->id);
+			$category->thumb = $this->fetch->getInfoById('gallery','gall_cat_id',$category->id)->img_src;
 		}
+		// echo'<pre>';var_dump($categories);exit;
 		$this->load->view('header',['web'=>$profile ,
 									'title'=>'Gallery',
 									'categories'=>$categories 
@@ -22,16 +23,16 @@ class Gallery extends MY_Controller {
 		$this->load->view('footer');
 	}
 
-	public function galleryInner($id){
+	public function Album($id){
 		$profile=$this->fetch->getWebProfile();
-		$images=$this->fetch->getImagesByCat($id);
-		$catName=$this->fetch->getCategoryName($id);
-		$this->load->view('header',['profile'=>$profile ,
-									'title'=>'Gallery',
+		$images=$this->fetch->getInfoParams('gallery','gall_cat_id',$id);
+		$catName=$this->fetch->getInfoById('gallery_categories','id',$id)->name;
+		$this->load->view('header',['web'=>$profile ,
+									'title'=>'Album | '.$catName,
 									'images'=>$images,
 									'category'=>$catName
 									]);
-		$this->load->view('gallery-inner');
+		$this->load->view('media');
 		$this->load->view('footer');
 	}
 

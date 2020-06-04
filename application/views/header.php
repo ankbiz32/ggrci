@@ -7,7 +7,7 @@
     <title>Gyan Ganga Educational Academy, Vidhan sabha road, Raipur (C.G.) | <?=isset($title)?$title:''?></title>
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <link rel="shortcut icon" type="image/x-icon" href="<?=base_url('assets/')?>images/favicon32x32.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="<?=base_url('assets/images/')?>favicon32x32.ico">
     <meta name="theme-color" content="#1B5794">
     <meta name="msapplication-navbutton-color" content="#1B5794">
 

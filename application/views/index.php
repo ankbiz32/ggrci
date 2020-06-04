@@ -78,7 +78,7 @@
                         </p>
                     </div>
                 </marquee>
-                <a href="" class="see-all">See all →</a>
+                <a href="<?=base_url('Achievers')?>" class="see-all">See all →</a>
             </div>
             <div class="features wow fadeInUp" style="background: linear-gradient(#064580dd, #064580dd), url(assets/images/assembly.jpg) no-repeat">
                 <h2 class="heading serif">Facilities</h2>
@@ -402,11 +402,15 @@
                     </svg> &nbsp;
                         News:
                 </h4>
-                <ol>
                 <?php foreach($news as $n){?>
-                    <li><a href="<?=base_url('News/newsinner').$n->id?>"><?=$n->content?></a></li>
+                <a href="<?=base_url('news/').$n->id.'/'.$n->slug?>" class="news-block">
+                    <img src="<?=base_url('assets/news/').$n->img_src?>" alt="">
+                    <div class="news-txt">
+                        <p><?=strlen($n->heading)>80?substr($n->heading,0,80)." . . .":$n->heading?></p>
+                        <small><?=date('d/m/Y',strtotime($n->date))?></small>
+                    </div>
+                </a>
                 <?php }?>
-                </ol>
                 <a href="<?=base_url('News')?>" class="see-all">See all →</a>
             </div>
             <div class="notice">
@@ -418,13 +422,13 @@
                 </h4>
                 <ol>
                 <?php foreach($notice as $note){?>
-                    <li><a href="<?=base_url('assets/notice/').$note->file_src?>"><?=$note->content?></a></li>
+                    <li><a href="<?=base_url('assets/notice/').$note->file_src?>"><?=strlen($note->content)>80?substr($note->content,0,80)." . . .":$note->content?></a></li>
                 <?php }?>
                 </ol>
                 <a href="<?=base_url('Notice')?>" class="see-all">See all →</a>
             </div>
             <div class="tc-container">
-                <a href="tc.html" class="tc">
+                <a href="<?=base_url('TC')?>" class="tc">
                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="download" class="svg-inline--fa fa-download fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                         <path fill="currentColor" d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"></path>
                     </svg>

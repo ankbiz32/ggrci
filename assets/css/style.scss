@@ -514,7 +514,7 @@ nav.fixed{
     }
     aside{
         position: sticky;
-        top: 6.5rem;
+        top: 5.5rem;
         right: 0;
         flex-basis: 26%;
         margin-right: 5%;
@@ -534,6 +534,36 @@ nav.fixed{
                     fill:white;
                 }
             }
+            .news-block{
+                margin: 0;
+                padding: 0;
+                line-height: initial;
+                text-decoration:none ;
+                display: flex;
+                align-items: flex-start;
+                img{
+                    margin-right: 1rem;
+                    height: 7rem;
+                    width: 7rem;
+                    object-fit: contain !important;
+                    object-position: top !important;
+                }
+                .news-txt{
+                    flex:1;
+                    p{
+                        color: black;
+                        font-size: 1.4rem;
+                    }
+                    small{
+                        color:#333333;
+                        font-style: italic;
+                        font-size: 1.2rem;
+                    }
+                }
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
             ol{
                 margin-left: 1.5rem;
                 li{
@@ -546,16 +576,22 @@ nav.fixed{
                         &:hover{
                             text-decoration: underline #999;
                         }
+                        
+                        small{
+                            color:#333333;
+                            font-style: italic;
+                            font-size: 1.2rem;
+                        }
                     }
                 }
             }
             .see-all{
                 text-decoration: none;
-                margin-top: 1rem;
+                margin-top: 0rem;
             }
         }
         .notice{
-            margin: 1.5rem 0;
+            margin: 1rem 0 1.5rem;
             h4 svg{
                 height: 2rem;
                 margin-bottom: -3px;

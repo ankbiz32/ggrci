@@ -13,7 +13,7 @@
                 <thead>
                     <tr>
                         <th>Student's name</th>
-                        <th>DOB</th>
+                        <th>D.O.B</th>
                         <th>Father's name</th>
                         <th>Download</th>
                     </tr>

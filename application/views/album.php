@@ -10,7 +10,7 @@
         <div class="wrapper">
             <?php foreach($categories as $g){?>
             <a href="<?=base_url('Gallery/Album/').$g->id?>">
-                <img src="<?=base_url('assets/images/')?>" alt="GGEA">
+                <img src="<?=base_url('assets/images/').$g->thumb?>" alt="GGEA">
                 <p class="caption"><?=$g->name?></p>
             </a>
             <?php }?>

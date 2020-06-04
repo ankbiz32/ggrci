@@ -665,7 +665,7 @@ nav.fixed {
 .floater aside {
   position: -webkit-sticky;
   position: sticky;
-  top: 6.5rem;
+  top: 5.5rem;
   right: 0;
   -ms-flex-preferred-size: 26%;
       flex-basis: 26%;
@@ -692,6 +692,50 @@ nav.fixed {
   fill: white;
 }
 
+.floater aside .news .news-block, .floater aside .notice .news-block {
+  margin: 0;
+  padding: 0;
+  line-height: initial;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.floater aside .news .news-block img, .floater aside .notice .news-block img {
+  margin-right: 1rem;
+  height: 7rem;
+  width: 7rem;
+  -o-object-fit: contain !important;
+     object-fit: contain !important;
+  -o-object-position: top !important;
+     object-position: top !important;
+}
+
+.floater aside .news .news-block .news-txt, .floater aside .notice .news-block .news-txt {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.floater aside .news .news-block .news-txt p, .floater aside .notice .news-block .news-txt p {
+  color: black;
+  font-size: 1.4rem;
+}
+
+.floater aside .news .news-block .news-txt small, .floater aside .notice .news-block .news-txt small {
+  color: #333333;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.floater aside .news .news-block:hover, .floater aside .notice .news-block:hover {
+  text-decoration: underline;
+}
+
 .floater aside .news ol, .floater aside .notice ol {
   margin-left: 1.5rem;
 }
@@ -713,13 +757,19 @@ nav.fixed {
           text-decoration: underline #999;
 }
 
+.floater aside .news ol li a small, .floater aside .notice ol li a small {
+  color: #333333;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
 .floater aside .news .see-all, .floater aside .notice .see-all {
   text-decoration: none;
-  margin-top: 1rem;
+  margin-top: 0rem;
 }
 
 .floater aside .notice {
-  margin: 1.5rem 0;
+  margin: 1rem 0 1.5rem;
 }
 
 .floater aside .notice h4 svg {
@@ -1821,7 +1871,36 @@ footer .lfooter .powered a:hover::after {
 
 .all-news .wrapper .news-txt {
   padding: 2rem 3rem;
+  display: flex;
+  align-items: center;
 }
+.all-news .wrapper .news-txt svg{
+  height: 2.5rem;
+  padding: 0 2rem;
+}
+.all-news .wrapper .news-txt .txt{
+  flex:1;
+}
+.all-news .wrapper .news-txt .txt .new-tag{
+  margin-left: 2rem;
+  padding: 2px 5px;
+  font-size: 1.2rem;
+  background-color: #d00000;
+  color: white;
+}
+
+.all-news .wrapper .news-txt .svg-arrow {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+}
+
+.all-news .wrapper .news-txt svg:hover .svg-arrow {
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
+}
+
 
 .all-news .wrapper .news-txt a {
   display: inline-block;
@@ -1860,6 +1939,126 @@ footer .lfooter .powered a:hover::after {
 .back-link:hover {
   padding: 1rem 2rem 1rem 1rem;
 }
+
+.projects-list .wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.projects-list .project{
+  flex-basis: 49%;
+  padding:2rem;
+  display: flex;
+  align-items: flex-start;
+  background-color: #eee;
+  margin-bottom: 20px;
+  color: black;
+  transition: 0.3s;
+  text-decoration: none;
+}
+.projects-list .wrapper .project:hover{
+ background-color: #e0e0e0;
+}
+.projects-list .project img{
+  height: 10rem;
+  width: 10rem;
+  object-fit: contain !important;
+  object-position: top !important;
+  margin-right: 1.5rem;
+}
+.projects-list .project h3{
+  font-size: 2rem;
+}
+.projects-list .project p{
+  font-size: 1.6rem;
+  margin: 0.5rem 0 0.2rem;
+}
+
+.project-main{
+  padding-top: 3rem;
+}
+.project-main main{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.project-main main article{
+  flex-basis: 65%;
+}
+.project-main main aside strong{
+  display: block;
+  padding: 0 2rem;
+  margin: 10px 0;
+  font-size: 1.6rem;
+}
+.project-main main aside{
+  flex-basis: 33%;
+  background-color: #eee;
+  position: sticky;
+  top: 100px;
+}
+.project-main aside a{
+  text-decoration: none;
+  color: black;
+  display: block;
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #aaa;
+  transition: 0.3s;
+}
+.project-main aside a:hover{
+  background-color: #ddd;
+}
+.project-main aside a img{
+  height: 6rem;
+  width: 6rem;
+  margin-right: 1rem;
+  object-fit: contain !important;
+}
+.project-main aside a p{
+  padding-top: 5px;
+  font-size: 1.6rem;
+}
+
+.project-main h1{
+  font-size: 2.5rem;
+  margin: 2rem 0 0.5rem;
+}
+.project-main small{
+  font-size: 1.4rem;
+  color: #555;
+  font-style: italic;
+}
+.project-main img.proj-img{
+  height: 30rem;
+  width: 100%;
+  background-color: #eeeeee66;
+  object-fit: contain !important;
+  margin: 0 0 0.8rem;
+}
+.project-main p.proj-descr{
+  color: #222;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  width: 700px;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.project-main .wrapper a.back-link{
+  margin: 0;
+}
+
+.all-ach .wrapper img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain !important;
+}
+
+
+
+
+
 
 @media (max-width: 780px) {
   p.subheader-txt {
@@ -2171,6 +2370,19 @@ footer .lfooter .powered a:hover::after {
   .social2 {
     display: none;
   }
+
+  .projects-list .project{
+    flex-basis: 100%;
+  }
+  .project-main img.proj-img{
+    height: 20rem;
+  }
+  .project-main p.proj-descr{
+    width: 400px;
+  }
+
+
+
 }
 
 @media (max-width: 480px) {
@@ -2370,5 +2582,16 @@ footer .lfooter .powered a:hover::after {
     -ms-flex-preferred-size: 48%;
         flex-basis: 48%;
   }
+
+  .project-main img.proj-img{
+    height: 300px;
+    width: 300px;
+  }
+  .project-main p.proj-descr{
+    width: 100% !important;
+  }
+
+
+
 }
 /*# sourceMappingURL=style.css.map */

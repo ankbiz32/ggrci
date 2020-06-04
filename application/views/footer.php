@@ -202,11 +202,11 @@
         </div>
     </footer>
 
-    <script src="assets/js/spotlight.bundle.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/float_label.js"></script>
+    <script src="<?=base_url()?>assets/js/spotlight.bundle.js"></script>
+    <script src="<?=base_url()?>assets/js/wow.min.js"></script>
+    <script src="<?=base_url()?>assets/js/float_label.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script src="assets/js/app.js"></script>
+    <script src="<?=base_url()?>assets/js/app.js"></script>
     <script>
         // On-scroll nav fiexd on top
         $(function () {

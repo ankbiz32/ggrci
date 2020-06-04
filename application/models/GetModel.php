@@ -18,6 +18,12 @@ class GetModel extends CI_Model{
         return $this->db->get($table)->result();
     }
 
+    public function getInfoOrderBy($table,$column)
+    {
+        $this->db->order_by($column,'desc');
+        return $this->db->get($table)->result();
+    }
+
     // Fetch Website Profile
     public function getWebProfile()
     {
