@@ -20,6 +20,20 @@ class Add extends MY_Controller {
                 $this->load->view('admin/adminfooter');  
         }
 
+        public function Testimonial()
+        {
+                $data=$this->input->post();
+                $status= $this->save->saveInfo('feedbacks',$data);
+                if($status){
+                    $this->session->set_flashdata('success','Testimonial added !' );
+                    redirect("Admin/Testimonials");
+                }
+                else{
+                    $this->session->set_flashdata('failed','Error !');
+                    redirect("Admin/Testimonials");
+                }
+        }
+
         public function gallCategory()
         {
             $this->form_validation->set_rules('name', 'Album name', 'required');
@@ -28,12 +42,12 @@ class Add extends MY_Controller {
                 $path ='assets/images';
                 $initialize = array(
                     "upload_path" => $path,
-                    "allowed_types" => "jpg|jpeg|png|bmp|webp",
+                    "allowed_types" => "jpg|jpeg|png|bmp|svg",
                     "remove_spaces" => TRUE
                 );
                 $this->load->library('upload', $initialize);
                 if (!$this->upload->do_upload('img')) {
-                    $this->session->set_flashdata('failed',$this->upload->display_errors());
+                    $this->session->set_flashdata('failed',trim(strip_tags($this->upload->display_errors())));
                     redirect('Admin/Gallery');
                 }
                 else {
@@ -41,17 +55,15 @@ class Add extends MY_Controller {
                     $imagename = $imgdata['file_name'];
                 } 
 
-                $data=array('name'=>$this->input->post('name'),
-                            'descr'=>$this->input->post('descr')
-                            );
-                $status= $this->save->saveCategory($data);
+                $data=array('name'=>$this->input->post('name'));
+                $status= $this->save->saveInfo('gallery_categories',$data);
 
                 if($status){
                     $cat_id=$this->fetch->getLatestCategory();
                     $data=array('img_src'=>$imagename,
                             'gall_cat_id'=>$cat_id
                             );
-                    $status= $this->save->saveGalleryImg($data);
+                    $status= $this->save->saveInfo('gallery',$data);
                     
                     $this->session->set_flashdata('success','Album added !' );
                     redirect('Admin/Gallery');
@@ -62,7 +74,7 @@ class Add extends MY_Controller {
                 }
             }
             else{
-                $this->session->set_flashdata('failed','Invalid inputs');
+                $this->session->set_flashdata('failed',trim(strip_tags(validation_errors())));
                 redirect('Admin/Gallery');
             }
         }
@@ -73,12 +85,12 @@ class Add extends MY_Controller {
                 $path ='assets/images';
                 $initialize = array(
                     "upload_path" => $path,
-                    "allowed_types" => "jpg|jpeg|png|bmp|webp",
+                    "allowed_types" => "jpg|jpeg|png|bmp|svg",
                     "remove_spaces" => TRUE
                 );
                 $this->load->library('upload', $initialize);
                 if (!$this->upload->do_upload('img')) {
-                    $this->session->set_flashdata('failed',$this->upload->display_errors());
+                    $this->session->set_flashdata('failed',trim(strip_tags($this->upload->display_errors())));
                     redirect("Admin/galleryInner/$cid");
                 }
                 else {
@@ -96,7 +108,7 @@ class Add extends MY_Controller {
                             'gall_cat_id'=>$cid
                             );
                 }
-                $status= $this->save->saveGalleryImg($data);
+                $status= $this->save->saveInfo('gallery',$data);
 
                 if($status){
                     $this->session->set_flashdata('success','Image added !' );
@@ -248,21 +260,6 @@ class Add extends MY_Controller {
             else{
                 $this->session->set_flashdata('failed',validation_errors());
                 redirect('Admin/Notice');
-            }
-        }
-
-        public function Career()
-        {
-            $data=$this->input->post();
-            $status= $this->save->saveCareer($data);
-
-            if($status){
-                $this->session->set_flashdata('success','New Career added !' );
-                redirect('Admin/Careers');
-            }
-            else{
-                $this->session->set_flashdata('failed','Error !');
-                redirect('Admin/Careers');
             }
         }
 

@@ -9,7 +9,7 @@
                 <h1 class="serif wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.8s">Gyan Ganga</h1>
                 <h3 class="serif wow fadeInLeft" data-wow-delay="1.3s">Educational Academy</h3>
                 <p class="wow fadeInRight" data-wow-delay="1.8s">We will give all the fatherly and motherly care to the child for the fullest overall development of his/her personality.</p>
-                <a href="http://www.vdarshan.com/dt/gg/gyanganga.html" target="_blank" class="btn wow fadeInRight" data-wow-duration="1s" data-wow-delay="2.2s"><i class="fa fa-globe fa-lg fa-spin"></i> &nbsp; Virtual school tour</a>
+                <a href="<?=$web->virtual_tour?>" target="_blank" class="btn wow fadeInRight" data-wow-duration="1s" data-wow-delay="2.2s"><i class="fa fa-globe fa-lg fa-spin"></i> &nbsp; Virtual school tour</a>
             </div>
         </div>
         

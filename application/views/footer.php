@@ -230,7 +230,7 @@
         $(document).ready(function(){
             const Toast = Swal.mixin({
                 showConfirmButton: true,
-                timer: 50000
+                timer: 3000
             });
 
             <?php if($this->session->flashdata('success') || $message = $this->session->flashdata('failed')):

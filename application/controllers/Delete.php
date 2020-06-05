@@ -12,6 +12,20 @@ class Delete extends MY_Controller {
 
 
         // Delete News
+        public function Testimonial($id)
+        {
+            $status= $this->delete->deleteById('feedbacks','id',$id);
+            if($status){
+                $this->session->set_flashdata('success','Testimonial deleted !');
+                redirect('Admin/Testimonials');
+            }
+            else{
+                $this->session->set_flashdata('failed','Error!');
+                redirect('Admin/Testimonials');
+            }
+        }
+
+        // Delete News
         public function News($id)
         {
             $news= $this->fetch->getNewsById($id);
@@ -52,14 +66,14 @@ class Delete extends MY_Controller {
         // Delete Album Category
         public function gallCategory($id)
         {
-            $status= $this->delete->deleteCategory($id);
+            $status= $this->delete->deleteById('gallery_categories','id',$id);
             if($status){
-                $images= $this->fetch->getImagesByCat($id);
+                $images= $this->fetch->getInfoParams('gallery','gall_cat_id',$id);
                 foreach($images as $image){
                     $path= 'assets/images/'.$image->img_src;
                     unlink("$path");
                 }
-                $status= $this->delete->deleteImagesByCategory($id);
+                $status= $this->delete->deleteById('gallery','gall_cat_id',$id);
                 $this->session->set_flashdata('success','Album Deleted!');
                 redirect('Admin/Gallery');
             }
@@ -72,16 +86,17 @@ class Delete extends MY_Controller {
         // Delete Gallery Image
         public function galleryImg($id)
         {
-            $unlink_src= $this->fetch->getImageById($id)->img_src;
-            $cat_id= $this->fetch->getImageById($id)->gall_cat_id;
+            $imgData= $this->fetch->getInfoById('gallery','id',$id);
+            $unlink_src= $imgData->img_src;
+            $cat_id= $imgData->gall_cat_id;
             $count= $this->fetch->getCountOfImages($cat_id);
             $redirect="Admin/galleryInner/$cat_id";
             
-            $status= $this->delete->deleteGalleryImg($id);
+            $status= $this->delete->deleteById('gallery','id',$id);
             if($status){
                 if ($count < 2){
                     $redirect="Admin/Gallery";
-                    $this->delete->deleteCategory($cat_id);
+                    $this->delete->deleteById('gallery_categories','id',$cat_id);
                 }
                 $path= 'assets/images/'.$unlink_src;
                 unlink("$path");
@@ -118,81 +133,6 @@ class Delete extends MY_Controller {
             }
         }
 
-        // Delete Career
-        public function Career($id)
-        {
-            $status= $this->delete->deleteCareer($id);
-
-            if($status){
-                $this->session->set_flashdata('success','Career Deleted!');
-                redirect('Admin/Careers');
-            }
-            else{
-                $this->session->set_flashdata('failed','Error!');
-                redirect('Admin/Careers');
-            }
-        }
-
-        // Delete Career
-        public function Application($id)
-        {
-            
-            $res= $this->fetch->getAppById($id);
-            $path= 'assets/resumes/'.$res->resume;
-            unlink("$path");
-            $status= $this->delete->deleteApplication($id);
-
-            if($status){
-                $this->session->set_flashdata('success','Application Deleted!');
-                redirect('Admin/Applications');
-            }
-            else{
-                $this->session->set_flashdata('failed','Error!');
-                redirect('Admin/Applications');
-            }
-        }
-
-        // Delete Service
-        public function Service($id)
-        {
-            $service= $this->fetch->getServiceById($id);
-            $path= 'assets/images/'.$service->img;
-            unlink("$path");
-            $status= $this->delete->deleteService($id);
-
-            if($status){
-                $this->session->set_flashdata('success','Service Deleted!');
-                redirect('Admin/Services');
-            }
-            else{
-                $this->session->set_flashdata('failed','Error!');
-                redirect('Admin/Services');
-            }
-        }
-
-        // Delete Blog
-        public function Blog($id)
-        {
-            $blogimg= $this->fetch->getBlogById($id);
-            $path= 'assets/images/'.$blogimg->img;
-            $countBlogs = $this->fetch->countBlogsWithCatId($blogimg->categories_id);
-            unlink("$path");
-            if($countBlogs){
-                if($countBlogs==1){
-                    $this->delete->deleteCategory($blogimg->categories_id);
-                }
-            }
-            $status= $this->delete->deleteBlog($id);
-
-            if($status){
-                $this->session->set_flashdata('success','Blog Deleted!');
-                redirect('Admin/Blog');
-            }
-            else{
-                $this->session->set_flashdata('failed','Error!');
-                redirect('Admin/Blog');
-            }
-        }
 
 
 }

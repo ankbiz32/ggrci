@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2020 at 08:52 PM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.2.20
+-- Generation Time: Jun 05, 2020 at 11:33 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -64,14 +63,6 @@ CREATE TABLE `enquiries` (
   `status` varchar(10) NOT NULL DEFAULT 'new'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `enquiries`
---
-
-INSERT INTO `enquiries` (`id`, `date`, `name`, `email`, `phone`, `message`, `status`) VALUES
-(38, '2020-03-05', 'Ankur A', 'testuser@xyz.com', '9876543214', 'sacascsacavsdvds', 'new'),
-(39, '2020-05-06', 'Testing', 'ankbiz32@gmail.com', '9874563214', 'Testing', 'new');
-
 -- --------------------------------------------------------
 
 --
@@ -106,7 +97,7 @@ CREATE TABLE `gallery` (
   `id` int(11) NOT NULL,
   `gall_cat_id` int(11) NOT NULL,
   `img_src` varchar(500) NOT NULL,
-  `alt_txt` varchar(500) NOT NULL DEFAULT 'Grace international school photo gallery'
+  `alt_txt` varchar(500) NOT NULL DEFAULT 'Gyan ganga school photo gallery'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -266,7 +257,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `pwd`, `fname`, `lname`, `email`, `phone`, `status`, `role`) VALUES
-(1, 'admin_gis', '$2y$10$GTuCiR/T2JzOLXiaRCZ.1efI8LK6.pXK0Ga55d5mfZo6xPtFHClsC', 'Demo', 'User', 'info@gyangangaraipur.org.in', '', '1', 'admin');
+(1, 'admin_ggea', '$2y$10$Tw9GoCsFUjqu1I8yLyxbjOVynSwXkqCw1.BSWRgKurtrA7SFQIldC', 'Admin', ' ', 'info@gyangangaraipur.org.in', '', '1', 'admin');
 
 -- --------------------------------------------------------
 
@@ -288,15 +279,16 @@ CREATE TABLE `webprofile` (
   `fblink` varchar(50) NOT NULL,
   `instalink` varchar(50) NOT NULL,
   `twitterlink` varchar(50) NOT NULL,
-  `youtubelink` varchar(500) NOT NULL
+  `youtubelink` varchar(500) NOT NULL,
+  `virtual_tour` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `webprofile`
 --
 
-INSERT INTO `webprofile` (`id`, `email`, `phone1`, `phone2`, `whatsapp_no`, `address_line1`, `address_line2`, `address_line3`, `timing_1`, `timing_2`, `fblink`, `instalink`, `twitterlink`, `youtubelink`) VALUES
-(1, 'info@gyangangaraipur.org.in', '0771-2284716', '0771-2284816', '6666666666', 'Baloda Bazar road, near Vidhan Sabha,', 'Village Nardaha,', 'Raipur, C.G. - 493111', 'Mon to Fri - 10AM to 2PM', 'Sat - 10AM to 12PM', 'www.facebook.com', 'www.instagram.com', 'www.twitter.com', 'www.youtube.com');
+INSERT INTO `webprofile` (`id`, `email`, `phone1`, `phone2`, `whatsapp_no`, `address_line1`, `address_line2`, `address_line3`, `timing_1`, `timing_2`, `fblink`, `instalink`, `twitterlink`, `youtubelink`, `virtual_tour`) VALUES
+(1, 'info@gyangangaraipur.org.in', '0771-2284716', '0771-2284816', '6666666666', 'Baloda Bazar road, near Vidhan Sabha,', 'Village Nardaha,', 'Raipur, C.G. - 493111', 'Mon to Fri - 10AM to 2PM', 'Sat - 10AM to 12PM', 'https://.facebook.com', 'https://instagram.com', 'www.twitter.com', 'https://youtube.com', 'http://www.vdarshan.com/dt/gg/gyanganga.html');
 
 --
 -- Indexes for dumped tables
@@ -402,25 +394,25 @@ ALTER TABLE `ad_banner`
 -- AUTO_INCREMENT for table `enquiries`
 --
 ALTER TABLE `enquiries`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `feedbacks`
 --
 ALTER TABLE `feedbacks`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 
 --
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `gallery_categories`
 --
 ALTER TABLE `gallery_categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `hero_images`
@@ -444,7 +436,7 @@ ALTER TABLE `notice`
 -- AUTO_INCREMENT for table `subscriptions`
 --
 ALTER TABLE `subscriptions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `transfer_cert`

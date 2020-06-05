@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>GIS | Admin - <?=$adminTitle?></title>
+  <title>GGEA | Admin - <?=$adminTitle?></title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
   <link rel="stylesheet" href="<?=base_url('assets/plugins/fontawesome-free/css/all.css')?>">
     <!-- Fav-icon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="<?=base_url()?>assets/images/fav-icons/fav-icon-512x5121.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?=base_url()?>assets/images/favicon32x32.ico">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/adminlte.min.css">
   <!-- DataTables -->
@@ -43,11 +43,12 @@
   <ul class="navbar-nav ml-auto">
     <li class="nav-item dropdown mr-5 mb-2">
       <a class="nav-link" data-toggle="dropdown" href="#">
-        <i class="fas fa-user-circle fa-2x"></i> <i class="fas fa-caret-down fa-md ml-1"></i>
+      <img src="<?=base_url('assets/images/avatar5.png')?>" class="rounded-circle" height="28" alt="Admin">
+         <i class="fas fa-caret-down fa-md ml-1"></i>
       </a>
       <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
         <a href="<?=base_url('Admin/adminProfile')?>" class="dropdown-item">
-          <i class="far fa-user mr-2"></i>Admin Profile
+          <i class="fa fa-user-circle fa-lg"></i> Admin Profile
         </a>
         <div class="dropdown-divider"></div>
         <a href="<?=base_url("Login/logout"); ?>" class="dropdown-item text-danger">

@@ -20,6 +20,7 @@
     <script src="<?=base_url('assets/')?>js/jquery.min.js"></script>
 </head>
 <body>
+    <a href="<?=base_url('Login')?>" accesskey="l" style="opacity:0; visibility:hidden;"></a>
     <div class="logo-bar wow fadeInDown">
         <div class="wrapper">
             <a href="<?=base_url()?>"><img src="<?=base_url('assets/')?>images/logo.png" alt="GGR Logo" class="logo"></a>

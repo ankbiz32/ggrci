@@ -37,7 +37,6 @@
                     <tr>
                       <th>S. No.</th>
                       <th>Album name</th>
-                      <th>Description</th>
                       <th>Action</th>
                     </tr>
                   </thead>
@@ -47,7 +46,6 @@
                       <tr>
                         <td><?=$c?></td>
                         <td><?=$category->name?></td>
-                        <td><?=$category->descr?></td>
                         <td>
                           <a href="<?=base_url('Delete/gallCategory/'.$category->id)?>" onclick="confirmation(event)" class="btn del-btn btn-danger mb-1" title="Delete Album"><i class="fa fa-trash-alt"></i></a>
                           <button class="btn btn-primary mb-1" data-toggle="modal" data-target="#editCategory<?=$category->id?>" title="Edit Album"><i class="fa fa-edit"></i></button>
@@ -71,10 +69,6 @@
                                             <label for="name">Album name:</label>
                                             <input type="text" class="form-control" name="name" id="name" value="<?=$category->name?>" required>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="descr">Short description:</label>
-                                            <textarea class="form-control" name="descr" id="descr" rows="5"><?=$category->descr?></textarea>
-                                        </div>
                                 </div>
                                 <div class="modal-footer justify-content-between">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -88,7 +82,7 @@
                         </div>
                       <!-- /edit Album modal -->
 
-                    <?php }?>
+                    <?php $c++; }?>
 
                   </tbody>
                 </table>
@@ -121,13 +115,9 @@
                     <input type="text" class="form-control" name="name" id="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="descr">Short Description:</label>
-                    <textarea class="form-control" name="descr" id="descr" rows="5"></textarea>
-                </div>
-                <div class="form-group">
                 <label for="img">Add an image to the album:</label>
                 <div class="custom-file">
-                <input type="file" class="custom-file-input form-control" id="img" name="img" required>
+                <input type="file" class="custom-file-input form-control" id="img" name="img" accept=".jpg, .jpeg, .png, .bmp, .svg" required>
                 <label class="custom-file-label" for="customFile">Choose image</label>
                 </div>
             </div>

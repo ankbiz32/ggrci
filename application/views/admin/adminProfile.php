@@ -60,7 +60,6 @@
                             <div class="card-footer">
                                 <button type="button" class="btn btn-primary mt-1 mb-" data-toggle="modal" data-target="#edit-prof-modal"><i class="fa fa-edit"></i>&nbsp; Edit profile</button>
                                 <button type="button" class="btn btn-secondary mt-1 mb-1" data-toggle="modal" data-target="#pwd-modal"><i class="fa fa-lock"></i>&nbsp; Change login password</button>
-                                <button type="button" class="btn btn-secondary mt-1 mb-1" data-toggle="modal" data-target="#Tpwd-modal"><i class="fa fa-lock"></i>&nbsp; Change transaction password</button>
                             </div>
                         </form>
 
@@ -154,40 +153,3 @@
         <!-- /.modal-dialog -->
     </div>
 <!-- /password modal -->
-
-<!-- Txn Password modal -->
-    <div class="modal fade" id="Tpwd-modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Change transaction password</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form role="form" method="post" action="<?=base_url('Login/changeTPwd/').$admProfile->user_id;?>">
-                    <div class="form-group">
-                        <label for="oldp">Old password:</label>
-                        <input type="password" class="form-control" name="oldp" id="oldp" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="newp">New Password:</label>
-                        <input type="password" class="form-control" name="newp" id="newp" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="cnfp">Confirm new Password:</label>
-                        <input type="password" class="form-control" name="cnfp" id="cnfp" required>
-                    </div>
-            </div>
-            <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="submit" class="btn btn-primary"><i class="fa fa-recycle"></i>&nbsp; Update</button>
-                </form>
-            </div>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-<!-- /Txn password modal -->

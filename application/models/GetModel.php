@@ -30,14 +30,6 @@ class GetModel extends CI_Model{
         return $this->db->get('webprofile')->row();
     }
 
-    // Fetch gallery categories
-    public function getGalleryCategories()
-    {
-        return $this->db->order_by('id','desc')
-                        ->get('gallery_categories')
-                        ->result();
-    }
-
     // Fetch latest category
     public function getLatestCategory()
     {
@@ -57,15 +49,6 @@ class GetModel extends CI_Model{
                         ->limit('1')
                         ->get('gallery')
                         ->row();
-    }
-
-    // Fetch gallery img by category
-    public function getImagesByCat($cid)
-    {
-        return $this->db->where('gall_cat_id',$cid)
-                        ->order_by('id','desc')
-                        ->get('gallery')
-                        ->result();
     }
 
     // Fetch gallery img with limit
@@ -92,33 +75,15 @@ class GetModel extends CI_Model{
         return $this->db->count_all($table);
     }
 
-    // Search String
-    public function search_string($string, $table, $column)
-    {
-        $this->db->from($table);
-        $this->db->like($column, `'`.$string.`'`);
-        $status=$this->db->get()->result();
-        if($status){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-    
-    // Fetch string id
-    public function get_string_id($str, $tbl, $col)
-    {
-        $this->db->from($tbl);
-        $this->db->like($col, `'`.$str.`'`);
-        $id_arr=$this->db->get()->row();
-        return $id_arr->id;
-    }
-
     // Fetch Admin Profile
     public function getAdminProfile()
     {
         return $this->db->get('users')->row();
+    }
+
+    public function getEnquiries()
+    {
+        return $this->db->get('enquiries')->result();
     }
 
     

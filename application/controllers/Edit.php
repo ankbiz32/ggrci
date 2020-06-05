@@ -11,6 +11,20 @@ class Edit extends MY_Controller {
             $this->load->model('EditModel','edit');
         }
 
+        public function Testimonial($id)
+        {
+                $data=$this->input->post();
+                $status= $this->edit->updateInfoById('feedbacks',$data,'id', $id);
+                if($status){
+                    $this->session->set_flashdata('success','Testimonial Updated !' );
+                    redirect("Admin/Testimonials");
+                }
+                else{
+                    $this->session->set_flashdata('failed','Error !');
+                    redirect("Admin/Testimonials");
+                }
+        }
+
         public function News($id)
         {
                 $news= $this->fetch->getNewsById($id);
@@ -123,62 +137,6 @@ class Edit extends MY_Controller {
             }
         }
 
-        public function updateNote($id)
-        {  
-            $data=array('content'=>$this->input->post('content'),
-                        'designation'=>$this->input->post('designation')
-                        );
-                        
-            if( $_FILES['img']['name']!=null ){
-                $path ='assets/images';
-                $initialize = array(
-                    "upload_path" => $path,
-                    "allowed_types" => "jpg|jpeg|png|bmp|webp",
-                    "remove_spaces" => TRUE
-                );
-                $this->load->library('upload', $initialize);
-                if (!$this->upload->do_upload('img')) {
-                    $this->session->set_flashdata('failed',$this->upload->display_errors());
-                    redirect('Admin/Note');
-                }
-                else {
-                    $filedata = $this->upload->data();
-                    $filename = $filedata['file_name'];
-                    $data['img_src']=$filename;
-                    $note= $this->fetch->getNote();
-                    $path= 'assets/images/'.$note->img_src;
-                }
-            } 
-
-            $status= $this->edit->updateNote($data, $id);
-
-            if($status){
-                $this->session->set_flashdata('success','Note Updated !' );
-                unlink("$path");
-                redirect('Admin/Note');
-            }
-            else{
-                $this->session->set_flashdata('failed','Error !');
-                redirect('Admin/Note');
-            }
-        }
-
-
-        public function Career($id)
-        {
-            $data=$this->input->post();
-            $status= $this->edit->updateCareer($data, $id);
-
-            if($status){
-                $this->session->set_flashdata('success','Career Updated !');
-                redirect('Admin/Careers');
-            }
-            else{
-                $this->session->set_flashdata('failed','Error !');
-                redirect('Admin/Careers');
-            }
-        }
-
         public function webProfile()
         {
             $data=$this->input->post();
@@ -196,7 +154,7 @@ class Edit extends MY_Controller {
 
         public function gallCategory($id)
         {
-            $status= $this->edit->updateGallCategory($this->input->post(), $id);
+            $status= $this->edit->updateInfoById('gallery_categories',$this->input->post(),'id', $id);
             if($status){
                 $this->session->set_flashdata('success','Album Updated !');
                 redirect('Admin/Gallery');
@@ -211,18 +169,19 @@ class Edit extends MY_Controller {
         {
             
             $data=array('alt_txt'=>$this->input->post('alt_txt'));
-            $cat_id= $this->fetch->getImageById($id)->gall_cat_id;   
-            $unlink_src= $this->fetch->getImageById($id)->img_src;   
+            $imgData = $this->fetch->getInfoById('gallery','id',$id); 
+            $cat_id=$imgData->gall_cat_id;  
+            $unlink_src= $imgData->img_src;   
             if( $_FILES['img']['name']!=null ){
                 $path ='assets/images';
                 $initialize = array(
                     "upload_path" => $path,
-                    "allowed_types" => "jpg|jpeg|png|bmp|webp",
+                    "allowed_types" => "jpg|jpeg|png|bmp|svg",
                     "remove_spaces" => TRUE
                 );
                 $this->load->library('upload', $initialize);
                 if (!$this->upload->do_upload('img')) {
-                    $this->session->set_flashdata('failed',$this->upload->display_errors());
+                    $this->session->set_flashdata('failed',trim(strip_tags($this->upload->display_errors())));
                     redirect("Admin/galleryInner/$cat_id");
                 }
                 else {
@@ -234,7 +193,7 @@ class Edit extends MY_Controller {
                 }
             } 
 
-            $status= $this->edit->updateImage($data, $id);
+            $status= $this->edit->updateInfoById('gallery',$data,'id', $id);
 
             if($status){
                 $this->session->set_flashdata('success','Image Updated !' );
@@ -243,44 +202,6 @@ class Edit extends MY_Controller {
             else{
                 $this->session->set_flashdata('failed','Error !');
                 redirect("Admin/galleryInner/$cat_id");
-            }
-        }
-
-        public function heroImage($id)
-        {
-            
-            $data=array('alt_txt'=>$this->input->post('alt_txt')); 
-            $unlink_src= $this->fetch->getHeroImageById($id)->img_src;   
-            if( $_FILES['img']['name']!=null ){
-                $path ='assets/images';
-                $initialize = array(
-                    "upload_path" => $path,
-                    "allowed_types" => "jpg|jpeg|png|bmp|webp",
-                    "remove_spaces" => TRUE
-                );
-                $this->load->library('upload', $initialize);
-                if (!$this->upload->do_upload('img')) {
-                    $this->session->set_flashdata('failed',$this->upload->display_errors());
-                    redirect("Admin/Slider");
-                }
-                else {
-                    $imgdata = $this->upload->data();
-                    $imagename = $imgdata['file_name'];
-                    $data['img_src']=$imagename;
-                    $path= 'assets/images/'.$unlink_src;
-                    unlink("$path");
-                }
-            } 
-
-            $status= $this->edit->updateHeroImage($data, $id);
-
-            if($status){
-                $this->session->set_flashdata('success','Image Updated !' );
-                redirect("Admin/Slider");
-            }
-            else{
-                $this->session->set_flashdata('failed','Error !');
-                redirect("Admin/Slider");
             }
         }
 

@@ -3,7 +3,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="<?=base_url('Admin')?>" class="brand-link ml-1">
-      <span class="brand-text text-lg"><img src="<?=base_url('assets/images/logo_admin.png')?>" alt="GIS logo" height="70px" class=""> <strong class="ml-2">Admin </strong>Panel</span>
+      <span class="brand-text text-lg"><img src="<?=base_url('assets/images/logo_admin.png')?>" alt="GGEA logo" height="70px" class=""> <strong class="ml-2">Admin </strong>Panel</span>
     </a>
     <!-- Sidebar -->
     <div class="sidebar"  style="">
@@ -20,38 +20,27 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <li class="nav-item">
-            <a href="<?=base_url('Admin')?>" class="nav-link <?php if($this->uri->segment(1)=="Admin" AND $this->uri->segment(2)=="" AND $this->uri->segment(3)==""){echo ' CustomActive';}?> >">
-              <i class="fas fa-columns nav-icon"></i>
-              <p>Dashboard</p>
-            </a>
-          </li>
 
-          <li class="nav-item has-treeview <?php if($this->uri->segment(2)=="Users" OR $this->uri->segment(2)=="Admissions" OR $this->uri->segment(2)=="Payments"){echo ' menu-open';}?>">
+        
+          <li class="nav-item has-treeview <?php if($this->uri->segment(2)=="" || $this->uri->segment(2)=="Subscriptions"){echo ' menu-open';}?>">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-file-invoice"></i>
+              <i class="nav-icon fa fa-columns"></i>
               <p>
-                Admissions
+                Dashboard
                 <i class="right fas fa-angle-down"></i>
               </p>
             </a>
             <ul class="nav nav-treeview ml-3">
               <li class="nav-item">
-                <a href="<?=base_url('Admin/Users')?>" class="nav-link <?php if($this->uri->segment(2)=="Users"){echo ' CustomActive';}?>">
-                  <i class="fa fa-users nav-icon"></i>
-                  <p>Users</p>
+                <a href="<?=base_url('Admin')?>" class="nav-link <?php if($this->uri->segment(2)==""){echo ' CustomActive';}?>">
+                  <i class="fa fa-circle nav-icon"></i>
+                  <p>Enquiries</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url('Admin/Admissions')?>" class="nav-link <?php if($this->uri->segment(2)=="Admissions"){echo ' CustomActive';}?>">
-                  <i class="fa fa-file-invoice nav-icon"></i>
-                  <p>Admissions Form</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?=base_url('Admin/Payments')?>" class="nav-link <?php if($this->uri->segment(2)=="Payments"){echo ' CustomActive';}?>">
-                  <i class="fa fa-money-bill nav-icon"></i>
-                  <p>Payments</p>
+                <a href="<?=base_url('Admin/Subscriptions')?>" class="nav-link <?php if($this->uri->segment(2)=="Subscriptions"){echo ' CustomActive';}?>">
+                  <i class="fa fa-circle nav-icon"></i>
+                  <p>Subscriptions</p>
                 </a>
               </li>
             </ul> 
@@ -63,7 +52,6 @@
               <p>News</p>
             </a>
           </li>
-          
 
           <li class="nav-item">
             <a href="<?=base_url('Admin/Notice')?>" class="nav-link <?php if($this->uri->segment(2)=="Notice"){echo ' CustomActive';}?>">
@@ -73,44 +61,78 @@
           </li>
 
           <li class="nav-item">
-            <a href="<?=base_url('Admin/Gallery')?>" class="nav-link <?php if($this->uri->segment(2)=="Gallery" OR $this->uri->segment(2)=="galleryInner"){echo ' CustomActive';}?>">
+            <a href="<?=base_url('Admin/Gallery')?>" class="nav-link <?php if($this->uri->segment(2)=="Gallery" || $this->uri->segment(2)=="galleryInner"){echo ' CustomActive';}?>">
               <i class="fa fa-images nav-icon"></i>
               <p>Gallery</p>
             </a>
           </li>
 
+          <li class="nav-item has-treeview <?php if($this->uri->segment(2)=="AllAch" || $this->uri->segment(2)=="TopAch"){echo ' menu-open';}?>">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-star"></i>
+              <p>
+                Achievers
+                <i class="right fas fa-angle-down"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview ml-3">
+              <li class="nav-item">
+                <a href="<?=base_url('Admin/AllAch')?>" class="nav-link <?php if($this->uri->segment(2)=="AllAch"){echo ' CustomActive';}?>">
+                  <i class="fa fa-circle nav-icon"></i>
+                  <p>All achievers img</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=base_url('Admin/TopAch')?>" class="nav-link <?php if($this->uri->segment(2)=="TopAch"){echo ' CustomActive';}?>">
+                  <i class="fa fa-circle nav-icon"></i>
+                  <p>Top achievers</p>
+                </a>
+              </li>
+            </ul> 
+          </li>
+
           <li class="nav-item">
-            <a href="<?=base_url('Admin/Slider')?>" class="nav-link <?php if($this->uri->segment(2)=="Slider"){echo ' CustomActive';}?>">
-              <i class="fa fa-film nav-icon"></i>
-              <p>Slider Images</p>
+            <a href="<?=base_url('Admin/Testimonials')?>" class="nav-link <?php if($this->uri->segment(2)=="Testimonials"){echo ' CustomActive';}?>">
+              <i class="fa fa-comment-alt nav-icon"></i>
+              <p>Testimonials</p>
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="<?=base_url('Admin/Note')?>" class="nav-link <?php if($this->uri->segment(2)=="Note"){echo ' CustomActive';}?>">
-              <i class="fa fa-pen nav-icon"></i>
-              <p>Director's Note</p>
+            <a href="<?=base_url('Admin/TC')?>" class="nav-link <?php if($this->uri->segment(2)=="TC"){echo ' CustomActive';}?>">
+              <i class="fa fa-file nav-icon"></i>
+              <p>TC</p>
             </a>
           </li>
 
-          <li class="nav-item">
-            <a href="<?=base_url('Admin/Careers')?>" class="nav-link <?php if($this->uri->segment(2)=="Careers"){echo ' CustomActive';}?>">
-              <i class="fa fa-cube nav-icon"></i>
-              <p>Careers</p>
+          <li class="nav-item has-treeview <?php if($this->uri->segment(2)=="TourVid" || $this->uri->segment(2)=="Magazine"){echo ' menu-open';}?>">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-upload"></i>
+              <p>
+                Uploads
+                <i class="right fas fa-angle-down"></i>
+              </p>
             </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="<?=base_url('Admin/Applications')?>" class="nav-link <?php if($this->uri->segment(2)=="Applications"){echo ' CustomActive';}?>">
-              <i class="fa fa-briefcase nav-icon"></i>
-              <p>Job applications</p>
-            </a>
+            <ul class="nav nav-treeview ml-3">
+              <li class="nav-item">
+                <a href="<?=base_url('Admin/TourVid')?>" class="nav-link <?php if($this->uri->segment(2)=="TourVid"){echo ' CustomActive';}?>">
+                  <i class="fa fa-circle nav-icon"></i>
+                  <p>School tour video</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=base_url('Admin/Magazine')?>" class="nav-link <?php if($this->uri->segment(2)=="Magazine"){echo ' CustomActive';}?>">
+                  <i class="fa fa-circle nav-icon"></i>
+                  <p>Spectrum magazine</p>
+                </a>
+              </li>
+            </ul> 
           </li>
 
           <li class="nav-item">
             <a href="<?=base_url('Admin/webProfile')?>" class="nav-link <?php if($this->uri->segment(2)=="webProfile"){echo ' CustomActive';}?>">
               <i class="fa fa-globe nav-icon"></i>
-              <p>GIS web profile</p>
+              <p>GGEA web profile</p>
             </a>
           </li>
 

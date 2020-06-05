@@ -66,7 +66,7 @@
                                         <label class="custom-file-label" for="customFile">Choose image</label>
                                     </div>
                                     <div class="form-group mt-3">
-                                        <label for="alt_txt">Alt Name (optional) : </label>
+                                        <label for="alt_txt">Alt text (optional) : </label>
                                         <p class="text-muted text-sm">( This is used when image is broken & also for SEO purposes )</p>
                                         <input type="text" class="form-control" value="<?=$image->alt_txt?>" name="alt_txt" id="alt_txt">
                                     </div>
@@ -112,13 +112,13 @@
                 <div class="form-group">
                     <label for="img">Add Image:</label>
                     <div class="custom-file">
-                    <input type="file" class="custom-file-input form-control" id="img" name="img" required>
+                    <input type="file" class="custom-file-input form-control" id="img" name="img" accept=".jpg, .jpeg, .png, .bmp, .svg" required>
                     <label class="custom-file-label" for="customFile">Choose image</label>
                 </div>
                 <div class="form-group mt-3">
-                    <label for="alt_txt">Alt Name (optional) : </label>
+                    <label for="alt_txt">Alt text (optional) : </label>
                     <p class="text-muted text-sm">( This is used when image is broken & also for SEO purposes )</p>
-                    <input type="text" class="form-control" name="alt_txt" id="alt_txt">
+                    <input type="text" class="form-control" name="alt_txt" value="Gyan ganga school photo gallery" id="alt_txt">
                 </div>
             </div>
           </div>

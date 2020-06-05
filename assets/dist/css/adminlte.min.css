@@ -13,8 +13,12 @@
 
 
 .main-sidebar {
-    background: linear-gradient(#003466, #0061BF)!important;
+    background: #222;
     overflow-x:hidden !important;
+}
+
+html{
+font-size:93% ;
 }
 
 .main-sidebar nav ul li p,
@@ -32,10 +36,10 @@
 }
 
 .CustomActive{
-    background-color:rgba(255,255,255,0.5);
+    background-color:rgba(255,255,255,0.1);
 }
 .CustomActive p, .CustomActive i{
-    color: black !important;
+    /* color: black !important; */
 }
 
 aside #website-link{
