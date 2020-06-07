@@ -65,21 +65,21 @@
                 </a>
             </div>
             <ul class="menu">
-                <li><a href="<?=base_url()?>" class="active">Home</a></li>
-                <li><a href="<?=base_url('About')?>">About</a></li>
+                <li><a href="<?=base_url()?>" class="<?=$this->uri->segment(1)==""?'active':''?>">Home</a></li>
+                <li><a href="<?=base_url('About')?>" class="<?=$this->uri->segment(1)=="About"?'active':''?>">About</a></li>
                 <li class="dropdown sm-hide nowrap">
-                    <a>Admissions <i class="fa fa-caret-down fa-sm"></i></a>
+                    <a class="<?=$this->uri->segment(1)=="Admissions"?'active':''?><?=$this->uri->segment(1)=="TC"?'active':''?>">Admissions <i class="fa fa-caret-down fa-sm"></i></a>
                     <div class="submenu">
                         <a href="<?=base_url('Admissions')?>">Admission Procedure</a>
                         <a href="<?=base_url('TC')?>">Transfer certificates</a>
                     </div>
                 </li>
-                <li class="sm-show"><a href="<?=base_url('Admissions')?>">Admissions</a></li>
-                <li class="sm-show nowrap"><a href="<?=base_url('TC')?>">Transfer Certificate</a></li>
-                <li><a href="<?=base_url('Facilities')?>">Facilities</a></li>
-                <li><a href="<?=base_url('Gallery')?>">Gallery</a></li>
-                <li><a href="<?=base_url('Legal')?>">Legal</a></li>
-                <li><a href="<?=base_url('Contact')?>">Contact</a></li>
+                <li class="sm-show"><a href="<?=base_url('Admissions')?>" class="<?=$this->uri->segment(1)=="Admissions"?'active':''?>">Admissions</a></li>
+                <li class="sm-show nowrap"><a href="<?=base_url('TC')?>" class="<?=$this->uri->segment(1)=="TC"?'active':''?>">Transfer Certificate</a></li>
+                <li><a href="<?=base_url('Facilities')?>" class="<?=$this->uri->segment(1)=="Facilities"?'active':''?>">Facilities</a></li>
+                <li><a href="<?=base_url('Gallery')?>" class="<?=$this->uri->segment(1)=="Gallery"?'active':''?>">Gallery</a></li>
+                <li><a href="<?=base_url('Legal')?>" class="<?=$this->uri->segment(1)=="Legal"?'active':''?>">Legal</a></li>
+                <li><a href="<?=base_url('Contact')?>" class="<?=$this->uri->segment(1)=="Contact"?'active':''?>">Contact</a></li>
             </ul>
         </div>
     </nav>

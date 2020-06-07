@@ -1,12 +1,12 @@
 
     <div class="subheader" style="background:linear-gradient(to right,rgba(0,0,0,0.85) 40%,rgba(0,0,0,0.3)), url('<?=base_url()?>assets/images/header-about.jpg') no-repeat">
         <div class="wrapper">
-            <h2 class="subheader-head serif">About GGEA</h2>
-            <p class="subheader-txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, ut facere! Perferendis voluptatibus praesentium veritatis facere culpa neque alias autem.</p>
+            <h2 class="subheader-head serif wow fadeInUp" data-wow-delay="1s">About GGEA</h2>
+            <p class="subheader-txt wow fadeInUp" data-wow-delay="1.2s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, ut facere! Perferendis voluptatibus praesentium veritatis facere culpa neque alias autem.</p>
         </div>
     </div>
 
-    <section class="intro">
+    <section class="intro wow fadeInUp" data-wow-delay="1.5s">
         <div class="wrapper">
             <h2 class="heading serif">
                 History of GGEA
@@ -35,7 +35,7 @@
         </div>
     </section>
 
-    <section class="founder">
+    <section class="founder wow fadeInUp" data-wow-offset="100">
         <div class="wrapper">
             <div class="founder-img">
                 <img src="<?=base_url('assets/images/')?>founder.png" alt="Founder GGEA">
@@ -55,7 +55,7 @@
         </div>
     </section>
 
-    <section class="pmv">
+    <section class="pmv wow fadeInUp" data-wow-offset="100">
         <div class="wrapper">
             <div class="philo card">
                 <div class="sign">
@@ -97,7 +97,7 @@
         </div>
     </section>
 
-    <section class="quality">
+    <section class="quality wow fadeInUp" data-wow-offset="100">
         <div class="wrapper">
             <h2 class="heading">
                 The quality Policy

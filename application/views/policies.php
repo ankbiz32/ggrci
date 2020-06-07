@@ -1,12 +1,12 @@
 
     <div class="subheader" style="background:linear-gradient(to right,rgba(0,0,0,0.85) 40%,rgba(0,0,0,0.3)), url('<?=base_url()?>assets/images/header-privacy.jpg') no-repeat">
         <div class="wrapper">
-            <h2 class="subheader-head serif">Privacy Policy</h2>
-            <p class="subheader-txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, ut facere! Perferendis voluptatibus praesentium veritatis facere culpa neque alias autem.</p>
+            <h2 class="subheader-head serif wow fadeInUp" data-wow-delay="1s">Privacy Policy</h2>
+            <p class="subheader-txt wow fadeInUp" data-wow-delay="1.2s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, ut facere! Perferendis voluptatibus praesentium veritatis facere culpa neque alias autem.</p>
         </div>
     </div>
 
-    <section class="privacy">
+    <section class="privacy wow fadeInUp" data-wow-delay="1.6s">
         <div class="wrapper">
 
             <p>At Gyan Ganga Educational Academy, accessible from www.gyangangaraipur.org.in, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Gyan Ganga Educational Academy and how we use it.</p>

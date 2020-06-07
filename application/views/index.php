@@ -23,7 +23,7 @@
                     <p>Pre-primary school <br> courses</p>
                     <a href="" class="btn">Know more</a>
                 </div>
-                <img src="assets/images/pre-primary-course2.jpg" alt="Pre primary courses">
+                <img class='lazyload' data-src="assets/images/pre-primary-course2.jpg" alt="Pre primary courses">
             </div>
             <div class="course wow slideInLeft" data-wow-delay="2.3s">
                 <img src="assets/images/middle-school1.jpg" alt="Primary & middle courses" class="brdr-2">
@@ -31,7 +31,7 @@
                     <p>Primary & Middle <br> school courses</p>
                     <a href="" class="btn">Know more</a>
                 </div>
-                <img src="assets/images/middle-school2.jpg" alt="Primary & middle courses">
+                <img class='lazyload' data-src="assets/images/middle-school2.jpg" alt="Primary & middle courses">
             </div>
             <div class="course wow slideInLeft" data-wow-delay="2s">
                 <img src="assets/images/senior-secondary-school1.jpg" alt="Senior secondary courses" class="brdr-2">
@@ -39,7 +39,7 @@
                     <p>Senior-secondary <br> school courses</p>
                     <a href="" class="btn">Know more</a>
                 </div>
-                <img src="assets/images/senior-secondary-school2.jpg" alt="Senior secondary courses">
+                <img class='lazyload' data-src="assets/images/senior-secondary-school2.jpg" alt="Senior secondary courses">
             </div>
         </div>
     </section>
@@ -49,34 +49,15 @@
             <div class="ach">
                 <h2 class="heading serif">Top Achievers</h2>
                 <marquee scrollamount="8" direction="right" onmouseover="stop()" onmouseout="start()">
+                    <?php foreach($ach as $ac){?>
                     <div class="achiever">
-                        <img src="assets/images/akanksha.png" alt="achievers">
-                        <p class="aname">Akanksha Chandra</p>
+                        <img class='lazyload' data-src="<?=base_url()?>assets/images/<?=$ac->img_src?>" alt="achievers">
+                        <p class="aname"><?=$ac->name?></p>
                         <p>
-                            Class-XII &nbsp; (2019)
+                            Class-<?=$ac->class?> &nbsp; (<?=$ac->batch?>)
                         </p>
                     </div>
-                    <div class="achiever">
-                        <img src="assets/images/2.png" alt="achievers">
-                        <p class="aname">Hipendra Naik</p>
-                        <p>
-                            Class-XII &nbsp; (2019)
-                        </p>
-                    </div>
-                    <div class="achiever">
-                        <img src="assets/images/4.png" alt="achievers">
-                        <p class="aname">Dakshansh Chawda</p>
-                        <p>
-                            Class-XII &nbsp; (2019)
-                        </p>
-                    </div>
-                    <div class="achiever">
-                        <img src="assets/images/jyotirmoy.png" alt="achievers">
-                        <p class="aname">Jyotirmoy Ghosh</p>
-                        <p>
-                            Class-XII &nbsp; (2019)
-                        </p>
-                    </div>
+                    <?php }?>
                 </marquee>
                 <a href="<?=base_url('Achievers')?>" class="see-all">See all →</a>
             </div>
@@ -382,16 +363,16 @@
                 <h2 class="heading serif">Gallery</h2>
                 <div class="imgs">
                     <div class="top-imgs">
-                        <a href="<?=base_url('assets/images/').$img[4]->img_src?>" class="spotlight"><img src="<?=base_url('assets/images/').$img[4]->img_src?>" alt="Gyan ganga school"></a>
-                        <a href="<?=base_url('assets/images/').$img[3]->img_src?>" class="spotlight"><img src="<?=base_url('assets/images/').$img[3]->img_src?>" alt="Gyan ganga school"></a>
-                        <a href="<?=base_url('assets/images/').$img[2]->img_src?>" class="spotlight"><img src="<?=base_url('assets/images/').$img[2]->img_src?>" alt="Gyan ganga school"></a>
+                        <a href="<?=base_url('assets/images/').$img[4]->img_src?>" class="spotlight"><img class='lazyload' data-src="<?=base_url('assets/images/').$img[4]->img_src?>" alt="Gyan ganga school"></a>
+                        <a href="<?=base_url('assets/images/').$img[3]->img_src?>" class="spotlight"><img class='lazyload' data-src="<?=base_url('assets/images/').$img[3]->img_src?>" alt="Gyan ganga school"></a>
+                        <a href="<?=base_url('assets/images/').$img[2]->img_src?>" class="spotlight"><img class='lazyload' data-src="<?=base_url('assets/images/').$img[2]->img_src?>" alt="Gyan ganga school"></a>
                     </div>
                     <div class="bottom-imgs">
-                        <a href="<?=base_url('assets/images/').$img[1]->img_src?>" class="spotlight landscape"><img src="<?=base_url('assets/images/').$img[1]->img_src?>" alt="Gyan ganga school"></a>
-                        <a href="<?=base_url('assets/images/').$img[0]->img_src?>" class="spotlight"><img src="<?=base_url('assets/images/').$img[0]->img_src?>" alt="Gyan ganga school"></a>
+                        <a href="<?=base_url('assets/images/').$img[1]->img_src?>" class="spotlight landscape"><img class='lazyload' data-src="<?=base_url('assets/images/').$img[1]->img_src?>" alt="Gyan ganga school"></a>
+                        <a href="<?=base_url('assets/images/').$img[0]->img_src?>" class="spotlight"><img class='lazyload' data-src="<?=base_url('assets/images/').$img[0]->img_src?>" alt="Gyan ganga school"></a>
                     </div>
                 </div>
-                <a href="media.html" class="see-all">See all →</a>
+                <a href="<?=base_url('Gallery')?>" class="see-all">See all →</a>
             </div>
         </div>
         <aside>
@@ -402,15 +383,19 @@
                     </svg> &nbsp;
                         News:
                 </h4>
-                <?php foreach($news as $n){?>
+                <?php
+                if(empty($news)){
+                    echo'<p style="margin-bottom:1rem; font-style:italic">No news to show right now !</p>';
+                }
+                else{
+                 foreach($news as $n){?>
                 <a href="<?=base_url('news/').$n->id.'/'.$n->slug?>" class="news-block">
-                    <img src="<?=base_url('assets/news/').$n->img_src?>" alt="">
+                    <img class='lazyload' data-src="<?=base_url('assets/news/').$n->img_src?>" alt="">
                     <div class="news-txt">
-                        <p><?=strlen($n->heading)>80?substr($n->heading,0,80)." . . .":$n->heading?></p>
-                        <small><?=date('d/m/Y',strtotime($n->date))?></small>
+                        <p><?=strlen($n->heading)>80?substr($n->heading,0,80)." . . .":$n->heading?>&emsp;&emsp;&emsp; <small>(<?=date('d/m/Y',strtotime($n->date))?>)</small></p>
                     </div>
                 </a>
-                <?php }?>
+                <?php } } ?>
                 <a href="<?=base_url('News')?>" class="see-all">See all →</a>
             </div>
             <div class="notice">
@@ -420,10 +405,27 @@
                     </svg> &nbsp;
                     Notice:
                 </h4>
-                <ol>
-                <?php foreach($notice as $note){?>
-                    <li><a href="<?=base_url('assets/notice/').$note->file_src?>"><?=strlen($note->content)>80?substr($note->content,0,80)." . . .":$note->content?></a></li>
-                <?php }?>
+                <ul>
+                <?php 
+                if(empty($notice)){
+                    echo'<p style="margin-bottom:1rem;margin-left:-1.5rem; font-style:italic">No notice to show right now !</p>';
+                }
+                else{
+                foreach($notice as $note){?>
+                    <li>
+                        <?php if($note->file_src!=''){ ?>
+                            <a href="<?=base_url('assets/notice/').$note->file_src?>" target="_blank"><?=strlen($note->content)>80?substr($note->content,0,80)." . . .":$note->content?> </a> <br>
+                                <small>(<?=date('d/m/Y',strtotime($note->date))?>)</small>
+                                <?php if($note->status=='new'){ echo'<span class="new-tag-text">New</span>'; }?>
+                        <?php }else{?>
+                            <a>
+                                <?=strlen($note->content)>80?substr($note->content,0,80)." . . .":$note->content?> <br>
+                                <small>(<?=date('d/m/Y',strtotime($note->date))?>)</small>
+                                <?php if($note->status=='new'){ echo'<span class="new-tag-text">New</span>'; }?>
+                             </a>
+                        <?php }?>
+                    </li>
+                <?php } } ?>
                 </ol>
                 <a href="<?=base_url('Notice')?>" class="see-all">See all →</a>
             </div>
@@ -465,7 +467,7 @@
                 Your browser does not support the video tag.
             </video>
         </div>
-        <a href="<?=base_url('assets/magazine/spectrum.pdf')?>" target="_blank" style="background: linear-gradient(#000000aa, #000000aa), url(assets/magazine/mag.png)" class="mag-container">
+        <a href="<?=base_url('assets/magazine/mag.pdf')?>" target="_blank" style="background: linear-gradient(#000000aa, #000000aa), url(assets/magazine/mag.png)" class="mag-container" download>
             <div class="content">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 133 133">
                     <g id="Group_133" data-name="Group 133" transform="translate(-971 -2984)">

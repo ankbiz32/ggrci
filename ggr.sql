@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2020 at 11:33 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.6
+-- Generation Time: Jun 07, 2020 at 10:53 AM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.2.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -35,17 +36,19 @@ CREATE TABLE `achievers` (
   `img_src` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `ad_banner`
+-- Dumping data for table `achievers`
 --
 
-CREATE TABLE `ad_banner` (
-  `id` int(11) NOT NULL,
-  `img_src` varchar(500) NOT NULL,
-  `status` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `achievers` (`id`, `name`, `class`, `batch`, `img_src`) VALUES
+(1, 'Akanksha Chandra', 'X', '2019', 'img_1.png'),
+(2, 'Hipendra Naik', 'X', '2019', 'img_4.png'),
+(3, 'Harjas Singh Chhabra', 'X', '2019', 'img2.png'),
+(4, 'Astha Mishra', 'X', '2019', 'top1.jpg'),
+(5, 'Jyotirmoy Ghosh', 'XII', '2019', 'Layer_5.png'),
+(6, 'Dakshansha Chawda', 'XII', '2019', 'Layer_6.png'),
+(7, 'Shivam Rai', 'XII', '2019', 'Layer_8_-_Copy.png'),
+(8, 'Shivam Lahoti', 'XII', '2019', 'Layer_9.png');
 
 -- --------------------------------------------------------
 
@@ -128,7 +131,7 @@ CREATE TABLE `gallery_categories` (
 
 INSERT INTO `gallery_categories` (`id`, `name`) VALUES
 (1, 'Album Caption'),
-(2, 'Album Caption 2');
+(2, 'Students');
 
 -- --------------------------------------------------------
 
@@ -166,15 +169,6 @@ CREATE TABLE `news` (
   `status` varchar(100) NOT NULL DEFAULT 'old'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `news`
---
-
-INSERT INTO `news` (`id`, `heading`, `content`, `img_src`, `slug`, `date`, `status`) VALUES
-(1, 'Some news with a meaningful heading. Some news with a', 'Some news with a meaningful heading. Some news with a meaningful heading.Some news with a meaningful heading.Some news with a meaningful heading.Some news with a meaningful heading.', 'download.png', 'Some-news-with-a-meaningful-heading', '2020-02-18', 'new'),
-(10, 'Some news with a meaningful heading. Some news with a', 'Some news with a meaningful heading. Some news with a meaningful heading.Some news with a meaningful heading.', 'images.jpg', 'Some-news-with-a-meaningful-heading2', '2020-02-21', 'new'),
-(11, 'Some news with a meaningful heading. Some news with a', 'Some news with a meaningful heading.', 'insta.jpg', 'Some-news-with-a-meaningful-heading3', '2020-05-28', 'old');
-
 -- --------------------------------------------------------
 
 --
@@ -188,15 +182,6 @@ CREATE TABLE `notice` (
   `file_src` varchar(500) NOT NULL DEFAULT '_blank',
   `status` varchar(100) NOT NULL DEFAULT 'old'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `notice`
---
-
-INSERT INTO `notice` (`id`, `content`, `date`, `file_src`, `status`) VALUES
-(1, 'Some notice with a meaningful heading. Some notice with a meaningful heading. Some notice with a meaningful heading.', '2020-02-18', 'test.jpg', 'old'),
-(11, 'Some notice with a meaningful heading. Some notice with a meaningful heading. Some notice with a meaningful heading.', '2020-06-01', 'test2.jpg', 'old'),
-(12, 'Some notice with a meaningful heading.', '2020-05-13', 'wa.jpg', 'new');
 
 -- --------------------------------------------------------
 
@@ -225,14 +210,6 @@ CREATE TABLE `transfer_cert` (
   `img_src` varchar(100) NOT NULL,
   `uploaded_on` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `transfer_cert`
---
-
-INSERT INTO `transfer_cert` (`id`, `name`, `dob`, `fname`, `adm_no`, `img_src`, `uploaded_on`) VALUES
-(1, 'Shourya singh', '2001-12-03', 'Mr. Singh', '', 'test.jpg', '2020-06-02'),
-(3, 'Vishal Sharma', '2001-07-01', 'Mr. Sharma', '', 'test2.jpg', '2020-06-03');
 
 -- --------------------------------------------------------
 
@@ -298,12 +275,6 @@ INSERT INTO `webprofile` (`id`, `email`, `phone1`, `phone2`, `whatsapp_no`, `add
 -- Indexes for table `achievers`
 --
 ALTER TABLE `achievers`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `ad_banner`
---
-ALTER TABLE `ad_banner`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -382,13 +353,7 @@ ALTER TABLE `webprofile`
 -- AUTO_INCREMENT for table `achievers`
 --
 ALTER TABLE `achievers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `ad_banner`
---
-ALTER TABLE `ad_banner`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `enquiries`
@@ -424,13 +389,13 @@ ALTER TABLE `hero_images`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `notice`
 --
 ALTER TABLE `notice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `subscriptions`
@@ -442,7 +407,7 @@ ALTER TABLE `subscriptions`
 -- AUTO_INCREMENT for table `transfer_cert`
 --
 ALTER TABLE `transfer_cert`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`

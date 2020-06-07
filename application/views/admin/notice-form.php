@@ -27,7 +27,7 @@
           <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="card">
               <div class="card-body">
-                <form role="form" method="post" action="<?=$submissonPath?>" enctype="multipart/form-data">
+                <form role="form" method="post" action="<?=$submit?>" enctype="multipart/form-data">
                     <!-- <div class="row"> -->
                         <div class="form-group">
                             <label for="content">Notice:</label>
@@ -35,11 +35,11 @@
                         </div>
                         <div class="form-group">
                             <label for="img">File for Notice:</label>
-                            <?php if (isset($notice->file_src) AND $notice->file_src!='_blank_'){ ?>}
+                            <?php if (isset($notice->file_src) AND $notice->file_src!=''){ ?>
                                 <p class="text-muted">( Choose only if you want to change the current file )</p>
                             <?php }?>
                             <div class="custom-file">
-                            <input type="file" class="custom-file-input form-control" id="notice_file" name="notice_file">
+                            <input type="file" class="custom-file-input form-control" id="notice_file" accept=".jpg, .jpeg, .png, .bmp, .doc, .docx, .txt, .xls, .xlsx, .ppt, .pptx, .pdf" name="notice_file">
                             <label class="custom-file-label" for="customFile">Choose File</label>
                             </div>
                         </div>

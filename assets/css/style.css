@@ -125,6 +125,45 @@ a.see-all:hover {
   white-space: nowrap;
 }
 
+.pagination_wrapper{
+  width: 90%;
+  margin: 3rem auto 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.pagination_wrapper p{
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+}
+
+.pagination_wrapper .pagination{
+  list-style-type: none;
+  display: flex;
+}
+
+.pagination_wrapper .pagination li{
+  margin-right: 1.5rem;
+}
+
+.pagination_wrapper .pagination li a{
+  color: #075dad;
+  border: 1px solid #075dad;
+  background-color: transparent;
+  padding: 0.8rem 1.2rem;
+  transition: 0.2s;
+}
+
+.pagination_wrapper .pagination li.active a{
+  background-color: #075dad;
+  color: white;
+}
+
+.pagination_wrapper .pagination li a:hover{
+  color: white;
+  border: 1px solid #075dad;
+  background-color: #075dad;
+}
+
 .logo-bar .wrapper {
   padding: 1rem 0;
   display: -webkit-box;
@@ -292,6 +331,7 @@ nav .wrapper .menu li a::after {
 nav .wrapper .menu li a.active::after {
   opacity: 1;
 }
+
 
 nav .wrapper .menu li a:hover::after {
   opacity: 1;
@@ -736,28 +776,28 @@ nav.fixed {
   text-decoration: underline;
 }
 
-.floater aside .news ol, .floater aside .notice ol {
-  margin-left: 1.5rem;
+.floater aside .news ul, .floater aside .notice ul {
+  margin-left: 1.8rem;
 }
 
-.floater aside .news ol li, .floater aside .notice ol li {
+.floater aside .news ul li, .floater aside .notice ul li {
   margin-bottom: 1rem;
   font-size: 1.4rem;
 }
 
-.floater aside .news ol li a, .floater aside .notice ol li a {
+.floater aside .news ul li a, .floater aside .notice ul li a {
   font-size: 1.4rem;
   color: black;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-.floater aside .news ol li a:hover, .floater aside .notice ol li a:hover {
+.floater aside .news ul li a:hover, .floater aside .notice ul li a:hover {
   -webkit-text-decoration: underline #999;
           text-decoration: underline #999;
 }
 
-.floater aside .news ol li a small, .floater aside .notice ol li a small {
+.floater aside .news ul li a small, .floater aside .notice ul li a small {
   color: #333333;
   font-style: italic;
   font-size: 1.2rem;
@@ -766,6 +806,10 @@ nav.fixed {
 .floater aside .news .see-all, .floater aside .notice .see-all {
   text-decoration: none;
   margin-top: 0rem;
+}
+.floater aside .notice .see-all {
+  margin-left: -1.5rem
+  ;
 }
 
 .floater aside .notice {
@@ -1881,12 +1925,20 @@ footer .lfooter .powered a:hover::after {
 .all-news .wrapper .news-txt .txt{
   flex:1;
 }
-.all-news .wrapper .news-txt .txt .new-tag{
+.new-tag{
   margin-left: 2rem;
   padding: 2px 5px;
   font-size: 1.2rem;
   background-color: #d00000;
   color: white;
+}
+.new-tag-text{
+  margin-left: 2rem;
+  font-size: 1.2rem;
+  color: #d00000;
+  font-weight: 800;
+  padding:0 0.3rem;
+  border: 0.1rem solid #d00000;
 }
 
 .all-news .wrapper .news-txt .svg-arrow {

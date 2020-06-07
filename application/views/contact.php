@@ -1,8 +1,8 @@
 
-    <div class="subheader" style="background:linear-gradient(to right,rgba(0,0,0,0.85) 40%,rgba(0,0,0,0.3)), url('assets/images/header-media.jpg') no-repeat">
+    <div class="subheader" style="background:linear-gradient(to right,rgba(0,0,0,0.85) 40%,rgba(0,0,0,0.3)), url('assets/images/header-contact.jpg') no-repeat">
         <div class="wrapper">
-            <h2 class="subheader-head serif">Contact Us</h2>
-            <p class="subheader-txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, ut facere! Perferendis voluptatibus praesentium veritatis facere culpa neque alias autem.</p>
+            <h2 class="subheader-head serif wow fadeInUp" data-wow-dalay="1s">Contact Us</h2>
+            <p class="subheader-txt wow fadeInUp" data-wow-delay="1.2s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, ut facere! Perferendis voluptatibus praesentium veritatis facere culpa neque alias autem.</p>
         </div>
     </div>
 
@@ -12,7 +12,7 @@
             Connect with us
         </h2>
         <div class="content">
-            <form action="" method="POST">
+            <form action="<?=base_url('Home/Mail')?>" class="wow fadeInUp" data-wow-delay="2s" method="POST">
                 <div class="form-group">
                     <input type="text" maxlength="20" name="name" id="name" x-moz-errormessage="Enter name here" oninvalid="this.setCustomValidity('Enter name here')" oninput="this.setCustomValidity('')" required>
                     <label for="pname">Name* :</label>
@@ -31,7 +31,7 @@
                 </div>
                 <button type="submit" class="btn"> Send message &nbsp;<i class="fa fa-caret-right"></i></button>
             </form>
-            <div class="social2">
+            <div class="social2 wow fadeInUp" data-wow-delay="2.2s">
                 <div class="flexer">
                     <div class="one">
                         <div class="address ss2">
@@ -276,7 +276,7 @@
                         <p><a href="<?=base_url('Admissions')?>">Admissions</a></p>
                         <p><a href="<?=base_url('Facilities')?>">Facilities</a></p>
                         <p><a href="<?=base_url('TC')?>">TC</a></p>
-                        <p><a href="<?=base_url('Sitemap')?>">Sitemap</a></p>
+                        <p><a href="<?=base_url('sitemap.xml')?>">Sitemap</a></p>
                     </div>
                 </div>
             </div>

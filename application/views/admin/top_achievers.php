@@ -6,12 +6,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark"><i class="fa fa-newspaper"></i>&nbsp;&nbsp;News</h1>
+                <h1 class="m-0 text-dark"><i class="fa fa-circle"></i>&nbsp;&nbsp;Top Achievers</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="<?=base_url('Admin')?>">Dashboard</a></li>
-                  <li class="breadcrumb-item active">News</li>
+                  <li class="breadcrumb-item">Achievers</li>
+                  <li class="breadcrumb-item active">Top achievers</li>
                 </ol>
             </div><!-- /.col -->
             </div><!-- /.row -->
@@ -26,32 +27,32 @@
           <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="card">
               <div class="card-header row">
-                <h2 class="card-title col">List of News:</h2>
-                <a href="<?=base_url('Add/News')?>" class="btn btn-primary ml-auto" title="Add News">+ Add news</a>
+                <h2 class="card-title col">List of top achievers:</h2>
+                <a href="<?=base_url('Add/TopAch')?>" class="btn btn-primary ml-auto" title="Add achiever">+ Add more</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="bookdt" class="table table-bordered table-hover" style="width:100%">
                   <thead>
                     <tr>
-                      <th>News id</th>
-                      <th>Heading</th>
                       <th>Image</th>
-                      <th>Date uploaded</th>
+                      <th>Name</th>
+                      <th>Class</th>
+                      <th>Batch</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     <!-- display Data-->
-                    <?php foreach ($data as $d){?>
+                    <?php foreach ($ach as $d){?>
                       <tr>
-                        <td><?=$d->id?></td>
-                        <td><?=$d->heading?></td>
-                        <td><img src="<?=base_url()."assets/news/$d->img_src"?>" alt="Image" height="50" style="object-fit:cover;"></td>
-                        <td class=""><?=date('d-m-Y',strtotime($d->date))?></td>
+                        <td><img src="<?=base_url()."assets/images/$d->img_src"?>" alt="Image" height="80" style="object-fit:contain;"></td>
+                        <td><?=$d->name?></td>
+                        <td><?=$d->class?></td>
+                        <td><?=$d->batch?></td>
                         <td>
-                          <a href="<?=base_url('Edit/News/'.$d->id)?>" class="btn btn-primary mb-1" title="Edit News"><i class="fa fa-edit"></i></a>
-                          <a href="<?=base_url('Delete/News/'.$d->id)?>" onclick="confirmation(event)" class="btn del-btn btn-danger mb-1" title="Delete News"><i class="fa fa-trash-alt"></i></a>
+                          <a href="<?=base_url('Edit/TopAch/'.$d->id)?>" class="btn btn-primary mb-1" title="Edit achiever"><i class="fa fa-edit"></i></a>
+                          <a href="<?=base_url('Delete/TopAch/'.$d->id)?>" onclick="confirmation(event)" class="btn del-btn btn-danger mb-1" title="Delete achiever"><i class="fa fa-trash-alt"></i></a>
                         </td>
                       </tr>
 

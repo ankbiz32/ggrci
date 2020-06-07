@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="ml-2 mb-2 text-dark"><i class="fa fa-file"></i>&nbsp;&nbsp;Notice</h1>
+                <h1 class="ml-2 mb-2 text-dark"><i class="fa fa-sticky-note"></i>&nbsp;&nbsp;Notice</h1>
             </div><!-- /.col -->
             <div class=" mb-2 col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -34,30 +34,35 @@
                 <table id="bookdt" class="table table-bordered table-hover" style="width:100%">
                   <thead>
                     <tr>
-                      <th style="min-width:60px">S. No.</th>
+                      <th>S. No.</th>
                       <th>Notice</th>
                       <th>File</th>
+                      <th>Date</th>
                       <th>Status</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     <!-- display Data-->
-                    <?php $i=1; foreach ($notices as $notice){?>
+                    <?php foreach ($notices as $notice){?>
                       <tr>
-                        <td ><?=$i?>.</td>
+                        <td ><?=$notice->id?>.</td>
                         <td>
-                            <?=substr($notice->content,0,100).'<p class="text-xs mt-4"><i class="fa fa-calendar-alt"> </i> '
-                            .date('d-m-Y',strtotime($notice->date)).'</p>'?>
+                        <?=strlen($notice->content)>100?substr($notice->content,0,100)."...":$notice->content?>
                         </td>
-                        <td>
-                          <?php if($notice->file_src!='_blank_'){?>
+                        <td style="width:150px">
+                          <?php if($notice->file_src!=''){?>
                             <a href="<?=base_url()?>assets/notice/<?=$notice->file_src?>" target="_blank">
-                              <?=$notice->file_src?>
+                              <?='<i class="fa fa-sticky-note"></i> '.$notice->file_src?>
                             </a>
+                            <br><br>
+                            <a href="<?=base_url('Edit/Noticefile/'.$notice->id)?>" onclick="confirmation(event)" class="link text-danger mb-1" title="Delete Notice file"><i class="fa fa-times"></i> Remove file</a>
                             <?php } else{?>
                               <p class="text-muted text-sm">No file</p>
                             <?php }?>
+                        </td>
+                        <td style="width:80px">
+                            <?=date('d-m-Y',strtotime($notice->date))?>
                         </td>
                         <td>
                           <?php if($notice->status=='new'){
@@ -73,7 +78,7 @@
                           <a href="<?=base_url('Delete/Notice/'.$notice->id)?>" onclick="confirmation(event)" class="btn del-btn btn-danger mb-1" title="Delete Notice"><i class="fa fa-trash-alt"></i></a>
                         </td>
                       </tr>
-                    <?php $i++; }?>
+                    <?php }?>
 
                   </tbody>
                 </table>

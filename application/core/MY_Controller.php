@@ -53,7 +53,7 @@ class MY_Controller extends CI_Controller
         $config['base_url'] = site_url().$uri;
         $config['total_rows'] = $total_count;
         $config['per_page'] = $rows;
-        $config['full_tag_open'] = '<ul class="pagination pagination-sm no-margin pull-right">';
+        $config['full_tag_open'] = '<ul class="pagination">';
         $config['full_tag_close'] = '</ul>';
         $config['num_tag_open'] = '<li>';
         $config['num_tag_close'] = '</li>';

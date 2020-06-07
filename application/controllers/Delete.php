@@ -11,7 +11,7 @@ class Delete extends MY_Controller {
         }
 
 
-        // Delete News
+   
         public function Testimonial($id)
         {
             $status= $this->delete->deleteById('feedbacks','id',$id);
@@ -25,14 +25,14 @@ class Delete extends MY_Controller {
             }
         }
 
-        // Delete News
+ 
         public function News($id)
         {
-            $news= $this->fetch->getNewsById($id);
-            $status= $this->delete->deleteNews($id);
+            $news= $this->fetch->getInfoById('news','id',$id);
+            $status= $this->delete->deleteById('news','id',$id);
             if($status){
-                if($news->img_src!=null){
-                    $path= 'assets/images/'.$news->img_src;
+                if($news->img_src!='defaultNews.png'){
+                    $path= 'assets/news/'.$news->img_src;
                     unlink("$path");
                 }
                 $this->session->set_flashdata('success','News Deleted!');
@@ -43,16 +43,49 @@ class Delete extends MY_Controller {
                 redirect('Admin/News');
             }
         }
+ 
 
-        // Delete Notice
+        public function TC($id)
+        {
+            $tc= $this->fetch->getInfoById('transfer_cert','id',$id);
+            $status= $this->delete->deleteById('transfer_cert','id',$id);
+            if($status){
+                $path= 'assets/tc/'.$tc->img_src;
+                unlink($path);
+                $this->session->set_flashdata('success','TC Deleted!');
+                redirect('Admin/TC');
+            }
+            else{
+                $this->session->set_flashdata('failed','Error!');
+                redirect('Admin/TC');
+            }
+        }
+
+        public function TopAch($id)
+        {
+            $ach= $this->fetch->getInfoById('achievers','id',$id);
+            $status= $this->delete->deleteById('achievers','id',$id);
+            if($status){
+                $path= 'assets/images/'.$ach->img_src;
+                unlink($path);
+                $this->session->set_flashdata('success','Achiever Deleted !');
+                redirect('Admin/TopAch');
+            }
+            else{
+                $this->session->set_flashdata('failed','Error!');
+                redirect('Admin/TopAch');
+            }
+        }
+
+
         public function Notice($id)
         {
-            $notice= $this->fetch->getNoticeById($id);
-            $status= $this->delete->deleteNotice($id);
+            $notice= $this->fetch->getInfoById('notice','id',$id);
+            $status= $this->delete->deleteById('notice','id',$id);
             if($status){
-                if($notice->filr_src!='_blank_'){
+                if($notice->file_src!=''){
                     $path= 'assets/notice/'.$notice->file_src;
-                    unlink("$path");
+                    unlink($path);
                 }
                 $this->session->set_flashdata('success','Notice Deleted!');
                 redirect('Admin/Notice');
@@ -63,7 +96,7 @@ class Delete extends MY_Controller {
             }
         }
 
-        // Delete Album Category
+   
         public function gallCategory($id)
         {
             $status= $this->delete->deleteById('gallery_categories','id',$id);
@@ -83,7 +116,7 @@ class Delete extends MY_Controller {
             }
         }
 
-        // Delete Gallery Image
+       
         public function galleryImg($id)
         {
             $imgData= $this->fetch->getInfoById('gallery','id',$id);
@@ -109,7 +142,7 @@ class Delete extends MY_Controller {
             }
         }
 
-        // Delete Slider Image
+
         public function heroImg($id)
         {
             $unlink_src= $this->fetch->getHeroImageById($id)->img_src;

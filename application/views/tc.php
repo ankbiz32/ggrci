@@ -1,12 +1,12 @@
 
     <div class="subheader" style="background:linear-gradient(to right,rgba(0,0,0,0.85) 40%,rgba(0,0,0,0.3)), url('<?=base_url()?>assets/images/header-tc.jpg') no-repeat">
         <div class="wrapper">
-            <h2 class="subheader-head serif">Transfer certificates</h2>
-            <p class="subheader-txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, ut facere! Perferendis voluptatibus praesentium veritatis facere culpa neque alias autem.</p>
+            <h2 class="subheader-head serif wow fadeInUp" data-wow-delay="1s">Transfer certificates</h2>
+            <p class="subheader-txt wow fadeInUp" data-wow-delay="1.2s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, ut facere! Perferendis voluptatibus praesentium veritatis facere culpa neque alias autem.</p>
         </div>
     </div>
 
-    <section class="tc-page">
+    <section class="tc-page wow fadeInUp" data-wow-delay="1.6s">
         <div class="wrapper">
             <h3>List of transfer certificates :</h3>
             <table>
@@ -19,7 +19,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($tc as $t){?>
+                    <?php 
+                    if(empty($tc)){
+                        echo '<tr><td colspan="4" style="font-style:italic; color:#555555">No TC uploaded !</td></tr>';
+                    }
+                    else{
+                    foreach($tc as $t){?>
                         <tr>
                         <td><?=$t->name?></td>
                         <td><?=date('d/m/Y',strtotime($t->dob))?></td>
@@ -46,8 +51,13 @@
                             </a>
                         </td>
                     </tr>
-                    <?php }?>
+                    <?php } }?>
                 </tbody>
             </table>
+        </div>
+        <div class="pagination_wrapper">
+            <?php if($links){?>
+                <p class="page-no">Go to page  : &emsp; <?php echo $links ?></p>
+            <?php }?>
         </div>
     </section>

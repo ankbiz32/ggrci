@@ -9,11 +9,23 @@ class News extends MY_Controller {
 	
 	public function index()
 	{
+		$this->page();
+	}
+
+	public function page()
+	{
+		$this->load->library("pagination");
+		$config=$this->getPaginitionConfig("News/page",$this->fetch->record_count('news') ,20);
+		$config["uri_segment"] = 3;
+		$this->pagination->initialize($config);
+		$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+		$news = $this->fetch->fetch_paginated_data('news',$config["per_page"], $page);
+		$links = $this->pagination->create_links();
 		$profile=$this->fetch->getWebProfile();
-		$news=$this->fetch->getInfoOrderBy('news','id');
 		$this->load->view('header',['web'=>$profile ,
 									'title'=>'News',
-									'news'=>$news
+									'news'=>$news,
+									'links'=>$links
 									]);
 		$this->load->view('news');
 		$this->load->view('footer');

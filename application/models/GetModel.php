@@ -86,6 +86,22 @@ class GetModel extends CI_Model{
         return $this->db->get('enquiries')->result();
     }
 
+    public function fetch_paginated_data($table,$limit, $start)
+    {
+        $this->db->select('*');
+        $this->db->from($table);
+        $this->db->order_by('id','desc');
+        $this->db->limit($limit, $start);
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+            return $data;
+        }
+        return false;
+    }
+
     
 
 }

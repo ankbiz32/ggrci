@@ -12,6 +12,7 @@ class Home extends MY_Controller {
 	{
 		$profile=$this->fetch->getWebProfile();
 		$feeds=$this->fetch->getInfo('feedbacks');
+		$ach=$this->fetch->getInfo('achievers');
 		$notice=$this->fetch->getInfoLim('notice','3','id');
 		$news=$this->fetch->getInfoLim('news','3','id');
 		$gallery=$this->fetch->getInfoLim('gallery','5','id');
@@ -19,6 +20,7 @@ class Home extends MY_Controller {
 									'title'=>'Home',
 									'feeds'=>$feeds,
 									'notice'=>$notice,
+									'ach'=>$ach,
 									'news'=>$news,
 									'img'=>$gallery
 								]);

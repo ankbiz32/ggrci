@@ -1,26 +1,35 @@
 
     <div class="subheader" style="background:linear-gradient(to right,rgba(0,0,0,0.85) 40%,rgba(0,0,0,0.3)), url('<?=base_url()?>assets/images/header-notice.jpg') no-repeat">
         <div class="wrapper">
-            <h2 class="subheader-head serif">Notice</h2>
-            <p class="subheader-txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, ut facere! Perferendis voluptatibus praesentium veritatis facere culpa neque alias autem.</p>
+            <h2 class="subheader-head serif wow fadeInUp" data-wow-delay="1s">Notice</h2>
+            <p class="subheader-txt wow fadeInUp" data-wow-delay="1.2s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, ut facere! Perferendis voluptatibus praesentium veritatis facere culpa neque alias autem.</p>
         </div>
     </div>
 
-    <a class="back-link"  onclick="window.history.back()">← &nbsp; Go back</a>
+    <a class="back-link wow fadeInUp" data-wow-delay="1.6s"  onclick="window.history.back()">← &nbsp; Go back</a>
 
-    <section class="all-news notice-all">
-        <div class="wrapper">
-            <?php foreach($notice as $n){?>
+    <section class="all-news notice-all wow fadeInUp" data-wow-delay="1.8s">
+        <div class="wrapper" <?php if(empty($notice)){echo 'style="border:none;"';}?>>
+            <?php
+            if(empty($notice)){
+                echo'<p style="margin-bottom:1rem; font-style:italic">No notice to show right now !</p>';
+            }
+            else{ foreach($notice as $n){?>
             <div class="news-txt">
                 <div class="txt">
-                    <a href="<?=base_url('assets/notice/').$n->file_src?>" target="_blank"><?=$n->content?></a><br>
+                <?php if($n->file_src!=''){ ?>
+                    <a href="<?=base_url('assets/notice/').$n->file_src?>" target="_blank"><?=$n->content?></a>
+                <?php }else{?>
+                    <a><?=$n->content?></a>
+                <?php }?>
+                    <br>
                     <small><em>Uploaded on: <?=date('d/m/Y',strtotime($n->date))?></em></small>
                     <?php if($n->status=='new'){?>
                         <span class="new-tag">New</span>
                     <?php }?>
                 </div>
-                <a href="<?=base_url('assets/notice/').$n->file_src?>" target="_blank">
-                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 477.867 477.867" style="enable-background:new 0 0 477.867 477.867;" xml:space="preserve">
+                <a <?=$n->file_src==''?'style="visibility:hidden"':''?> href="<?=base_url('assets/notice/').$n->file_src?>" target="_blank">
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 477.867 477.867" style="enable-background:new 0 0 477.867 477.867;" xml:space="preserve" >
                         <g>
                             <g>
                                 <path d="M443.733,307.2c-9.426,0-17.067,7.641-17.067,17.067v102.4c0,9.426-7.641,17.067-17.067,17.067H68.267
@@ -39,6 +48,11 @@
                     </svg>
                 </a>
             </div>
+            <?php }} ?>
+        </div>
+        <div class="pagination_wrapper">
+            <?php if($links){?>
+                <p class="page-no">Go to page  : &emsp; <?php echo $links ?></p>
             <?php }?>
         </div>
     </section>

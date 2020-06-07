@@ -52,7 +52,7 @@
     <footer>
         <div class="ufooter">
             <div class="emblem">
-                <img src="assets/images/footer-logo.PNG" alt="Gyan Ganga emblem">
+                <img class='lazyload' data-src="<?=base_url()?>assets/images/footer-logo.PNG" alt="Gyan Ganga emblem">
                 <div class="address">
                     <div class="footer-head">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 97.713 97.713" style="enable-background:new 0 0 97.713 97.713;" xml:space="preserve">
@@ -186,7 +186,7 @@
                         <p><a href="<?=base_url('Admissions')?>">Admissions</a></p>
                         <p><a href="<?=base_url('Facilities')?>">Facilities</a></p>
                         <p><a href="<?=base_url('TC')?>">TC</a></p>
-                        <p><a href="<?=base_url('Sitemap')?>">Sitemap</a></p>
+                        <p><a href="<?=base_url('sitemap.xml')?>" target="_blank">Sitemap</a></p>
                     </div>
                 </div>
             </div>
@@ -203,6 +203,7 @@
     </footer>
 
     <script src="<?=base_url()?>assets/js/spotlight.bundle.js"></script>
+    <script src="<?=base_url()?>assets/js/lazy.js"></script>
     <script src="<?=base_url()?>assets/js/wow.min.js"></script>
     <script src="<?=base_url()?>assets/js/float_label.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>

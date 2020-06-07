@@ -31,17 +31,6 @@ class Admin extends MY_Controller {
                 $this->load->view('admin/adminfooter');  
         }
 
-        public function Admissions()
-        {
-                $info=$this->fetch->getInfoParams('info','reg_paid','1');
-                $this->load->view('admin/adminheader',['info' => $info,
-                                                        'adminTitle'=>'Admissions'
-                                                        ]); 
-                $this->load->view('admin/adminaside'); 
-                $this->load->view('admin/admissions'); 
-                $this->load->view('admin/adminfooter');  
-        }
-
         public function Testimonials()
         {
                 $data=$this->fetch->getInfo('feedbacks');
@@ -55,8 +44,8 @@ class Admin extends MY_Controller {
 
         public function News()
         {
-                $news=$this->fetch->getNews();
-                $this->load->view('admin/adminheader',['news' => $news,
+                $news=$this->fetch->getInfo('news');
+                $this->load->view('admin/adminheader',['data' => $news,
                                                         'adminTitle'=>'News'
                                                         ]); 
                 $this->load->view('admin/adminaside'); 
@@ -66,7 +55,7 @@ class Admin extends MY_Controller {
 
         public function Notice()
         {
-                $notices=$this->fetch->getNotices();
+                $notices=$this->fetch->getInfo('Notice');
                 $this->load->view('admin/adminheader',['notices' => $notices,
                                                         'adminTitle'=>'Notice'
                                                         ]); 
@@ -100,14 +89,63 @@ class Admin extends MY_Controller {
                 $this->load->view('admin/adminfooter');  
         }
 
-        public function Slider()
+        public function TC()
         {
-                $images=$this->fetch->getHeroImg();
-                $this->load->view('admin/adminheader',['images' => $images,
-                                                        'adminTitle'=>'Slider Images'
+                $tc=$this->fetch->getInfo('transfer_cert');
+                $this->load->view('admin/adminheader',['data' => $tc,
+                                                        'adminTitle'=>'TC'
                                                         ]); 
                 $this->load->view('admin/adminaside'); 
-                $this->load->view('admin/adminHeroImages'); 
+                $this->load->view('admin/adminTC'); 
+                $this->load->view('admin/adminfooter');  
+        }
+
+        public function allAch()
+        {
+                $this->load->view('admin/adminheader',['adminTitle'=>'All achievers image']); 
+                $this->load->view('admin/adminaside'); 
+                $this->load->view('admin/all_achievers'); 
+                $this->load->view('admin/adminfooter');  
+        }
+
+        public function TopAch()
+        {
+                $ach=$this->fetch->getInfo('achievers');
+                $this->load->view('admin/adminheader',['ach'=>$ach,'adminTitle'=>'Top achievers']); 
+                $this->load->view('admin/adminaside'); 
+                $this->load->view('admin/top_achievers'); 
+                $this->load->view('admin/adminfooter');  
+        }
+
+        public function TourVid()
+        {
+                $this->load->view('admin/adminheader',['adminTitle'=>'School tour video']); 
+                $this->load->view('admin/adminaside'); 
+                $this->load->view('admin/tour-video'); 
+                $this->load->view('admin/adminfooter');  
+        }
+
+        public function Magazine()
+        {
+                $this->load->view('admin/adminheader',['adminTitle'=>'Spectrum magazine']); 
+                $this->load->view('admin/adminaside'); 
+                $this->load->view('admin/magazine'); 
+                $this->load->view('admin/adminfooter');  
+        }
+
+        public function Header_images()
+        {
+                $this->load->view('admin/adminheader',['adminTitle'=>'Header Images' ]); 
+                $this->load->view('admin/adminaside'); 
+                $this->load->view('admin/header_images'); 
+                $this->load->view('admin/adminfooter');  
+        }
+
+        public function Banner()
+        {
+                $this->load->view('admin/adminheader',['adminTitle'=>'Banner']); 
+                $this->load->view('admin/adminaside'); 
+                $this->load->view('admin/banner'); 
                 $this->load->view('admin/adminfooter');  
         }
 

@@ -105,7 +105,7 @@
             </a>
           </li>
 
-          <li class="nav-item has-treeview <?php if($this->uri->segment(2)=="TourVid" || $this->uri->segment(2)=="Magazine"){echo ' menu-open';}?>">
+          <li class="nav-item has-treeview <?php if($this->uri->segment(2)=="TourVid" || $this->uri->segment(2)=="Magazine" || $this->uri->segment(2)=="Header_images" || $this->uri->segment(2)=="Banner"){echo ' menu-open';}?>">
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-upload"></i>
               <p>
@@ -124,6 +124,18 @@
                 <a href="<?=base_url('Admin/Magazine')?>" class="nav-link <?php if($this->uri->segment(2)=="Magazine"){echo ' CustomActive';}?>">
                   <i class="fa fa-circle nav-icon"></i>
                   <p>Spectrum magazine</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=base_url('Admin/Header_images')?>" class="nav-link <?php if($this->uri->segment(2)=="Header_images"){echo ' CustomActive';}?>">
+                  <i class="fa fa-circle nav-icon"></i>
+                  <p>Header images</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=base_url('Admin/Banner')?>" class="nav-link <?php if($this->uri->segment(2)=="Banner"){echo ' CustomActive';}?>">
+                  <i class="fa fa-circle nav-icon"></i>
+                  <p>Banner image</p>
                 </a>
               </li>
             </ul> 

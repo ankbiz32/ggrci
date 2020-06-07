@@ -9,11 +9,23 @@ class Notice extends MY_Controller {
 	
 	public function index()
 	{
+		$this->page();
+	}
+
+	public function page()
+	{
+		$this->load->library("pagination");
+		$config=$this->getPaginitionConfig("Notice/page",$this->fetch->record_count('notice') ,15);
+		$config["uri_segment"] = 3;
+		$this->pagination->initialize($config);
+		$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+		$notice = $this->fetch->fetch_paginated_data('notice',$config["per_page"], $page);
+		$links = $this->pagination->create_links();
 		$profile=$this->fetch->getWebProfile();
-		$notice=$this->fetch->getInfoOrderBy('notice','id');
 		$this->load->view('header',['web'=>$profile ,
 									'title'=>'Notice',
-									'notice'=>$notice
+									'notice'=>$notice,
+									'links'=>$links
 									]);
 		$this->load->view('notice');
 		$this->load->view('footer');

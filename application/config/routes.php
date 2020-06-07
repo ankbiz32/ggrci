@@ -50,6 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['news/(:num)/(:any)'] = 'News/innerNews/$1';
+$route['sitemap.xml'] = 'Sitemap';
 
 $route['default_controller'] = 'Home';
 $route['404_override'] = '';
