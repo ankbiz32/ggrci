@@ -8,7 +8,7 @@
 
     <a onclick="window.history.back()" class="back-link">← &nbsp; Go back</a>
 
-    <section class="medi wow fadeInUp" data-wow-delay="2s">
+    <section class="media wow fadeInUp" data-wow-delay="2s">
         <div class="wrapper">
             <?php foreach($images as $i){?>
             <a href="<?=base_url('assets/images/').$i->img_src?>" class="spotlight">

@@ -7,6 +7,7 @@
     <title>Gyan Ganga Educational Academy, Vidhan sabha road, Raipur (C.G.) | <?=isset($title)?$title:''?></title>
     <meta name="description" content="">
     <meta name="keywords" content="">
+    <?=isset($social_meta)?$social_meta:''?>
     <link rel="shortcut icon" type="image/x-icon" href="<?=base_url('assets/images/')?>favicon32x32.ico">
     <meta name="theme-color" content="#1B5794">
     <meta name="msapplication-navbutton-color" content="#1B5794">
@@ -20,7 +21,7 @@
     <script src="<?=base_url('assets/')?>js/jquery.min.js"></script>
 </head>
 <body>
-    <a href="<?=base_url('Login')?>" accesskey="l" style="opacity:0; visibility:hidden;"></a>
+    <a href="<?=base_url('Login')?>" accesskey="l" style="opacity:0; visibility:hidden;" target="_blank"></a>
     <div class="logo-bar wow fadeInDown">
         <div class="wrapper">
             <a href="<?=base_url()?>"><img src="<?=base_url('assets/')?>images/logo.png" alt="GGR Logo" class="logo"></a>

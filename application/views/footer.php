@@ -1,5 +1,5 @@
 
-    <section class="contact" style="background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url('assets/images/ggr-drone.jpg') no-repeat;">
+    <section class="contact" style="background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url('<?=base_url()?>assets/images/ggr-drone.jpg') no-repeat;">
         <div class="wrapper wow fadeInUp" data-wow-offset="100">
         <h2 class="serif heading">
             Connect with us
