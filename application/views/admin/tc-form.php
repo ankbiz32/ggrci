@@ -31,7 +31,7 @@
                     <div class="row">
                         <div class="form-group col-md-4">
                             <label for="name" class="m-0">Student name:</label>
-                            <input type="text" class="form-control mt-2 text-lg" minlength="1" maxlength="30" name="name" value="<?=isset($d)?$d->name:''?>" id="name" required>
+                            <input type="text" class="form-control mt-2 text-lg" minlength="1" maxlength="50" name="name" value="<?=isset($d)?$d->name:''?>" id="name" required>
                         </div>
                         <div class="form-group col-md-4 col-sm-12 ml-3">
                             <label for="dob" class="m-0">DOB:</label>
@@ -41,7 +41,7 @@
                     <div class="row mt-3">
                         <div class="form-group col-md-4">
                             <label for="name" class="m-0">Father's name:</label>
-                            <input type="text" class="form-control mt-2 text-lg" minlength="1" maxlength="30" name="fname" value="<?=isset($d)?$d->fname:''?>" id="fname">
+                            <input type="text" class="form-control mt-2 text-lg" minlength="1" maxlength="50" name="fname" value="<?=isset($d)?$d->fname:''?>" id="fname">
                         </div>
                         <div class="form-group col-md-4 ml-3">
                             <label for="img" class="m-0">Upload TC: </label> <small class="mb-3">( jpg, jpeg, png, bmp & pdf allowed )</small>

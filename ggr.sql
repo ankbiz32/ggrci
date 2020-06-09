@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2020 at 10:53 AM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.2.20
+-- Generation Time: Jun 09, 2020 at 01:58 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -203,9 +202,9 @@ CREATE TABLE `subscriptions` (
 
 CREATE TABLE `transfer_cert` (
   `id` int(11) NOT NULL,
-  `name` varchar(20) NOT NULL,
+  `name` varchar(50) NOT NULL,
   `dob` date NOT NULL,
-  `fname` varchar(20) NOT NULL,
+  `fname` varchar(50) NOT NULL,
   `adm_no` varchar(10) NOT NULL,
   `img_src` varchar(100) NOT NULL,
   `uploaded_on` date NOT NULL
