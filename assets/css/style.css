@@ -1742,9 +1742,6 @@ footer .lfooter .powered a:hover::after {
           transform: translateY(20px);
 }
 
-.fac {
-  padding-bottom: 0;
-}
 
 .fac .wrapper {
   display: -webkit-box;
@@ -2385,6 +2382,12 @@ footer .lfooter .powered a:hover::after {
     overflow-x: auto;
     white-space: nowrap;
   }
+  .fac{
+    padding-bottom: 0;
+  }
+  .fac.coun{
+    padding-bottom: 4rem !important;
+  }
   .fac .wrapper {
     -webkit-box-orient: vertical !important;
     -webkit-box-direction: normal !important;
@@ -2393,15 +2396,17 @@ footer .lfooter .powered a:hover::after {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+            overflow: hidden;
   }
   .fac .wrapper img {
     margin: 1.5rem 0 !important;
     -ms-flex-preferred-size: 100% !important;
         flex-basis: 100% !important;
-    width: auto !important;
-    min-height: 20rem !important;
-    -o-object-fit: contain !important;
-       object-fit: contain !important;
+    width: 100%;
+    background-color: transparent;height: auto;
+  }
+  .fac.lib .wrapper img, .fac.lab .wrapper img{
+    max-height: 25rem;
   }
   .contact2 .wrapper {
     width: 90%;

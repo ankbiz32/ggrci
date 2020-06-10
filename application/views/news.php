@@ -2,7 +2,7 @@
     <div class="subheader" style="background:linear-gradient(to right,rgba(0,0,0,0.85) 40%,rgba(0,0,0,0.3)), url('<?=base_url()?>assets/images/header-news.jpg') no-repeat">
         <div class="wrapper">
             <h2 class="subheader-head serif wow fadeInUp" data-wow-delay="1s">News</h2>
-            <p class="subheader-txt wow fadeInUp" data-wow-delay="1.2s">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+            <!-- <p class="subheader-txt wow fadeInUp" data-wow-delay="1.2s">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p> -->
         </div>
     </div>
 

@@ -2,7 +2,7 @@
     <div class="subheader" style="background:linear-gradient(to right,rgba(0,0,0,0.85) 40%,rgba(0,0,0,0.3)), url('<?=base_url()?>assets/images/header-legal.jpg') no-repeat">
         <div class="wrapper">
             <h2 class="subheader-head serif wow fadeInUp" data-wow-delay="1s">Legal</h2>
-            <p class="subheader-txt wow fadeInUp" data-wow-delay="1.2s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, ut facere! Perferendis voluptatibus praesentium veritatis facere culpa neque alias autem.</p>
+            <!-- <p class="subheader-txt wow fadeInUp" data-wow-delay="1.2s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, ut facere! Perferendis voluptatibus praesentium veritatis facere culpa neque alias autem.</p> -->
         </div>
     </div>
 
