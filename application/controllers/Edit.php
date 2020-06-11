@@ -397,33 +397,6 @@ class Edit extends MY_Controller {
             }
         }
         
-        public function Banner($name){
-            if($_FILES['img']['name']!=null){
-                $path ='assets/images/';
-                $initialize = array(
-                    "upload_path" => $path,
-                    "allowed_types" => "jpg|jpeg|png|bmp",
-                    "remove_spaces" => TRUE,
-                    "max_size" => 1000,
-                    "overwrite" => true,
-                    'file_name' => $name.'.jpg'
-                );
-                $this->load->library('upload', $initialize);
-                if (!$this->upload->do_upload('img')) {
-                    $this->session->set_flashdata('failed',trim(strip_tags($this->upload->display_errors())) );
-                    redirect('Admin/Banner');
-                } 
-                else {
-                    $this->session->set_flashdata('success',"Image updated" );
-                    redirect('Admin/Banner');
-                }
-            }
-            else{
-                $this->session->set_flashdata('failed','No file selected' );
-                redirect('Admin/Banner');
-            }
-        }
-
         public function Noticefile($id)
         {
             $data['file_src']='';
@@ -510,6 +483,50 @@ class Edit extends MY_Controller {
                 redirect("Admin/galleryInner/$cat_id");
             }
         }
+
+        public function Banner($id)
+        {
+            if( $_FILES['img']['name']!=null ){
+                $imagename = '';
+                $unlink = '';
+                $path ='assets/images';
+                $initialize = array(
+                    "upload_path" => $path,
+                    "allowed_types" => "jpg|jpeg|png|bmp",
+                    "remove_spaces" => TRUE,
+                    "max_size"     => 520
+                );
+                $this->load->library('upload', $initialize);
+                if (!$this->upload->do_upload('img')) {
+                    $this->session->set_flashdata('failed',$this->upload->display_errors());
+                    redirect("Admin/Banner");
+                }
+                else {
+                    $imgdata = $this->upload->data();
+                    $data['img_src'] = $imgdata['file_name'];
+                    $imgData = $this->fetch->getInfoById('hero_images','id',$id); 
+                    $unlink='assets/images/'.$imgData->img_src;
+                    $status= $this->edit->updateInfoById('hero_images',$data,'id',$id);
+    
+                    if($status){
+                        if($unlink!=''){
+                            unlink($unlink);
+                        }
+                        $this->session->set_flashdata('success','Banner Updated !' );
+                        redirect("Admin/Banner");
+                    }
+                    else{
+                        $this->session->set_flashdata('failed','Error !');
+                        redirect("Admin/Banner");
+                    }
+                }
+            }
+            else{
+                $this->session->set_flashdata('failed','No file selected' );
+                redirect('Admin/Banner');
+            }
+        }
+
 
         public function enqStatus($id)
         {

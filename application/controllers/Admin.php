@@ -143,7 +143,8 @@ class Admin extends MY_Controller {
 
         public function Banner()
         {
-                $this->load->view('admin/adminheader',['adminTitle'=>'Banner']); 
+                $data=$this->fetch->getInfo('hero_images');
+                $this->load->view('admin/adminheader', ['data' => $data,'adminTitle'=>'Banners']);
                 $this->load->view('admin/adminaside'); 
                 $this->load->view('admin/banner'); 
                 $this->load->view('admin/adminfooter');  

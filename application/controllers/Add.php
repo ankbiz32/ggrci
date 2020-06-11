@@ -319,43 +319,41 @@ class Add extends MY_Controller {
                 }
         }
 
-        public function heroImage()
+        public function Banner()
         {
+            if( $_FILES['img']['name']!=null ){
                 $imagename = '';
                 $path ='assets/images';
                 $initialize = array(
                     "upload_path" => $path,
-                    "allowed_types" => "jpg|jpeg|png|bmp|webp",
-                    "remove_spaces" => TRUE
+                    "allowed_types" => "jpg|jpeg|png|bmp",
+                    "remove_spaces" => TRUE,
+                    "max_size"     => 520
                 );
                 $this->load->library('upload', $initialize);
                 if (!$this->upload->do_upload('img')) {
                     $this->session->set_flashdata('failed',$this->upload->display_errors());
-                    redirect("Admin/Slider");
+                    redirect("Admin/Banner");
                 }
                 else {
                     $imgdata = $this->upload->data();
-                    $imagename = $imgdata['file_name'];
-                } 
-                if($this->input->post('alt_txt')!=null){
-                    $data=array('img_src'=>$imagename,
-                            'alt_txt'=>$this->input->post('alt_txt')
-                            );
+                    $data['img_src'] = $imgdata['file_name'];
+                    $status= $this->save->saveInfo('hero_images',$data);
+    
+                    if($status){
+                        $this->session->set_flashdata('success','Banner added !' );
+                        redirect("Admin/Banner");
+                    }
+                    else{
+                        $this->session->set_flashdata('failed','Error !');
+                        redirect("Admin/Banner");
+                    }
                 }
-                else{
-                    $data=array('img_src'=>$imagename
-                            );
-                }
-                $status= $this->save->saveHeroImg($data);
-
-                if($status){
-                    $this->session->set_flashdata('success','Image added !' );
-                    redirect("Admin/Slider");
-                }
-                else{
-                    $this->session->set_flashdata('failed','Error !');
-                    redirect("Admin/Slider");
-                }
+            }
+            else{
+                $this->session->set_flashdata('failed','No file selected !');
+                redirect("Admin/Banner");
+            }
         }
 
 

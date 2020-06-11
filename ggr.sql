@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 09, 2020 at 01:58 PM
+-- Generation Time: Jun 11, 2020 at 01:40 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -150,7 +150,11 @@ CREATE TABLE `hero_images` (
 --
 
 INSERT INTO `hero_images` (`id`, `img_src`, `img_src_mob`, `alt_txt`) VALUES
-(1, 'hero.jpg', 'hero-mob.jpg', 'Gyan Ganga School students');
+(1, 'hero.jpg', 'hero-mob.jpg', 'Gyan Ganga School students'),
+(10, 'hero2.jpg', 'hero-mob2.jpg', 'Gyan Ganga School students'),
+(11, 'hero3.jpg', 'hero-mob3.jpg', 'Gyan Ganga School students'),
+(12, 'hero4.jpg', 'hero-mob4.jpg', 'Gyan Ganga School students'),
+(13, 'hero5.jpg', 'hero-mob5.jpg', 'Gyan Ganga School students');
 
 -- --------------------------------------------------------
 
@@ -382,7 +386,7 @@ ALTER TABLE `gallery_categories`
 -- AUTO_INCREMENT for table `hero_images`
 --
 ALTER TABLE `hero_images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `news`

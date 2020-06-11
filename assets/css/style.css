@@ -401,7 +401,7 @@ nav.fixed {
   z-index: -1 !important;
 }
 
-.hero picture img {
+.hero img {
   width: 100% !important;
   height: 100% !important;
   -o-object-fit: cover !important;
@@ -463,7 +463,7 @@ nav.fixed {
 }
 
 .courses .wrapper {
-  margin-top: -15rem;
+  /* margin-top: -15rem; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

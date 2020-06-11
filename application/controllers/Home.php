@@ -11,6 +11,7 @@ class Home extends MY_Controller {
 	public function index()
 	{
 		$profile=$this->fetch->getWebProfile();
+		$hero=$this->fetch->getInfo('hero_images');
 		$feeds=$this->fetch->getInfo('feedbacks');
 		$ach=$this->fetch->getInfo('achievers');
 		$notice=$this->fetch->getInfoLim('notice','3','id');
@@ -19,6 +20,7 @@ class Home extends MY_Controller {
 		$this->load->view('header',['web'=>$profile ,
 									'title'=>'Home',
 									'feeds'=>$feeds,
+									'hero'=>$hero,
 									'notice'=>$notice,
 									'ach'=>$ach,
 									'news'=>$news,

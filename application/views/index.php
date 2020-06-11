@@ -1,9 +1,14 @@
-
+<link rel="stylesheet" href="<?=base_url('assets/css/responsiveslides.css')?>">
     <div class="hero">
-        <picture>
+        <ul class="rslides">
+            <?php foreach($hero as $h){?>
+            <li><img src="<?=base_url('assets/images/').$h->img_src?>" alt="gg"></li>
+            <?php }?>
+        </ul>
+        <!-- <picture>
             <source media="(max-width: 650px)" srcset="assets/images/hero-mob.jpg">
             <img src="assets/images/hero.jpg" alt="Banner">
-        </picture>
+        </picture> -->
         <div class="wrapper">
             <div class="hero-content">
                 <h1 class="serif wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.8s">Gyan Ganga</h1>
@@ -17,7 +22,7 @@
 
     <section class="courses">
         <div class="wrapper">
-            <div class="course wow slideInLeft" data-wow-delay="2.6s">
+            <div class="course wow slideInLeft" data-wow-delay="0.5s">
                 <img src="assets/images/pre-primary-course1.jpg" alt="Pre primary courses" class="brdr-2">
                 <div class="text">
                     <p>Pre-primary school <br> courses</p>
@@ -25,7 +30,7 @@
                 </div>
                 <img class='lazyload' data-src="assets/images/pre-primary-course2.jpg" alt="Pre primary courses">
             </div>
-            <div class="course wow slideInLeft" data-wow-delay="2.3s">
+            <div class="course wow slideInLeft" data-wow-delay="0.2s">
                 <img src="assets/images/middle-school1.jpg" alt="Primary & middle courses" class="brdr-2">
                 <div class="text">
                     <p>Primary & Middle <br> school courses</p>
@@ -33,7 +38,7 @@
                 </div>
                 <img class='lazyload' data-src="assets/images/middle-school2.jpg" alt="Primary & middle courses">
             </div>
-            <div class="course wow slideInLeft" data-wow-delay="2s">
+            <div class="course wow slideInLeft" data-wow-delay="0s">
                 <img src="assets/images/senior-secondary-school1.jpg" alt="Senior secondary courses" class="brdr-2">
                 <div class="text">
                     <p>Senior-secondary <br> school courses</p>
@@ -541,8 +546,8 @@
             </div>
         </div>
     </section>
-
-    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="<?=base_url()?>assets/js/responsiveslides.min.js"></script>
+    <script src="<?=base_url()?>assets/js/owl.carousel.min.js"></script>
     <script>
         //  Testimonials slider
         $('.tstm-container').owlCarousel({
@@ -590,4 +595,23 @@
                 $('.vid-container .overlay').css("opacity", "0");
             });
         })
+
+        $(".rslides").responsiveSlides({
+            auto: true,
+            speed: 1000,
+            timeout: 4000,  
+            pager: false,
+            nav: false, 
+            random: false,
+            pause: false,
+            pauseControls: true, 
+            prevText: "<i class='fa fa-caret-left fa-lg'>",
+            nextText: "<i class='fa fa-caret-right fa-lg'>",
+            maxwidth: "",
+            navContainer: "",
+            manualControls: "",
+            namespace: "rslides",
+            before: function(){},
+            after: function(){}
+        });
     </script>

@@ -61,6 +61,22 @@ class Delete extends MY_Controller {
             }
         }
 
+        public function Banner($id)
+        {
+            $t= $this->fetch->getInfoById('hero_images','id',$id);
+            $status= $this->delete->deleteById('hero_images','id',$id);
+            if($status){
+                $path= 'assets/images/'.$t->img_src;
+                unlink($path);
+                $this->session->set_flashdata('success','Banner Deleted!');
+                redirect('Admin/Banner');
+            }
+            else{
+                $this->session->set_flashdata('failed','Error!');
+                redirect('Admin/Banner');
+            }
+        }
+
         public function TopAch($id)
         {
             $ach= $this->fetch->getInfoById('achievers','id',$id);
