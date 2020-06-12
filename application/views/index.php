@@ -66,7 +66,7 @@
                 </marquee>
                 <a href="<?=base_url('Achievers')?>" class="see-all">See all →</a>
             </div>
-            <div class="features wow fadeInUp" style="background: linear-gradient(#064580dd, #064580dd), url(assets/images/assembly.jpg) no-repeat">
+            <div class="features wow fadeInUp lazyload" data-bg="assets/images/assembly.jpg">
                 <h2 class="heading serif">Facilities</h2>
                 <div class="features-container">
                     <div class="feature">
@@ -467,12 +467,12 @@
                     <p>School tour video</p>
                 </div>
             </div>
-            <video poster="<?=base_url()?>assets/video/vid-thumb.jpg" id="vid">
-                <source src="<?=base_url()?>assets/video/ggr-video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+            <video class="lazyload" data-poster="<?=base_url()?>assets/video/vid-thumb.jpg" src="<?=base_url()?>assets/video/ggr-video.mp4" id="vid">
+                <!-- <source src="<?=base_url()?>assets/video/ggr-video.mp4" type="video/mp4">
+                Your browser does not support the video tag. -->
             </video>
         </div>
-        <a href="<?=base_url('assets/magazine/mag.pdf')?>" target="_blank" style="background: linear-gradient(#000000aa, #000000aa), url(assets/magazine/mag.png)" class="mag-container" download>
+        <a href="<?=base_url('assets/magazine/mag.pdf')?>" target="_blank" data-bg="assets/magazine/mag.png" class="mag-container lazyload" download>
             <div class="content">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 133 133">
                     <g id="Group_133" data-name="Group 133" transform="translate(-971 -2984)">

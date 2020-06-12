@@ -602,15 +602,29 @@ nav.fixed {
   background-size: cover !important;
   padding: 4rem 0 3rem 8%;
   color: white;
+  position: relative;
+  z-index: 0;
+}
+.floater .left .features::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #064580dd;
+  z-index: -1;
 }
 
 .floater .left .features h2 {
   color: white;
   margin-bottom: 5rem;
+  z-index: 1;
 }
 
 .floater .left .features h2:after {
   background-color: #ffffffaa;
+  z-index: 1;
 }
 
 .floater .left .features .features-container {
@@ -622,6 +636,7 @@ nav.fixed {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+      z-index: 2;
 }
 
 .floater .left .features .features-container .feature {
@@ -919,6 +934,17 @@ nav.fixed {
   background-size: cover !important;
   text-align: center;
   position: relative;
+  z-index: 2;
+}
+.vid a::after {
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000000aa;
+  z-index: -1;
 }
 
 .vid a .content {
@@ -1026,6 +1052,21 @@ nav.fixed {
 .contact {
   background-position: center !important;
   background-size: cover !important;
+  z-index: 3;
+  position: relative;
+}
+.contact::after{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: -1;
+}
+.contact .wrapper{
+ z-index: 2;
 }
 
 .contact h2.heading {
@@ -1053,6 +1094,7 @@ nav.fixed {
   margin-top: 4rem;
   -ms-flex-preferred-size: 60%;
       flex-basis: 60%;
+      z-index: 3;
 }
 
 .contact .content form .form-group {
@@ -2338,6 +2380,7 @@ footer .lfooter .powered a:hover::after {
   .vid a.mag-container {
     min-height: 30rem;
   }
+  
   .founder .wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

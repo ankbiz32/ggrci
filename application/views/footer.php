@@ -1,5 +1,5 @@
 
-    <section class="contact" style="background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url('<?=base_url()?>assets/images/ggr-drone.jpg') no-repeat;">
+    <section class="contact lazyload lazyload" data-bg="assets/images/ggr-drone.jpg">
         <div class="wrapper wow fadeInUp" data-wow-offset="100">
         <h2 class="serif heading">
             Connect with us
@@ -25,7 +25,7 @@
                 <button type="submit" class="btn"> Send message &nbsp;<i class="fa fa-caret-right"></i></button>
             </form>
             <div class="map-social">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12504.243146400868!2d81.72878186919894!3d21.28991672284088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28e834bcf78343%3A0x20841ab1597abf82!2sGyan%20Ganga%20Educational%20Academy!5e0!3m2!1sen!2sin!4v1590737904697!5m2!1sen!2sin" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                <iframe data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12504.243146400868!2d81.72878186919894!3d21.28991672284088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28e834bcf78343%3A0x20841ab1597abf82!2sGyan%20Ganga%20Educational%20Academy!5e0!3m2!1sen!2sin!4v1590737904697!5m2!1sen!2sin" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="lazyload"></iframe>
                 <div class="social-links">
                     <h3>Follow us:</h3>
                     <a href="<?=$web->fblink?>" target="_blank" class="fblink">
@@ -204,6 +204,7 @@
 
     <script src="<?=base_url()?>assets/js/spotlight.bundle.js"></script>
     <script src="<?=base_url()?>assets/js/lazy.js"></script>
+    <script src="<?=base_url()?>assets/js/lazyunveil.js"></script>
     <script src="<?=base_url()?>assets/js/wow.min.js"></script>
     <script src="<?=base_url()?>assets/js/float_label.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
