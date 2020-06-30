@@ -55,7 +55,7 @@ class Admin extends MY_Controller {
 
         public function Notice()
         {
-                $notices=$this->fetch->getInfo('Notice');
+                $notices=$this->fetch->getInfo('notice');
                 $this->load->view('admin/adminheader',['notices' => $notices,
                                                         'adminTitle'=>'Notice'
                                                         ]); 

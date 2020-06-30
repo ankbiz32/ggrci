@@ -1,0 +1,3 @@
+username: sidddnbn_ggr
+pwd: ggr_73372
+db: sidddnbn_ggr_db
