@@ -4,7 +4,7 @@
         <strong>Copyright &copy; 2020.</strong>
         All rights reserved.
       </p>
-      <p class="ml-auto">Powered by: <a href="https://cluebix.com" class="text-bold" target=_blank>Cluebix Software</a></p>
+      <!-- <p class="ml-auto">Powered by: <a href="https://cluebix.com" class="text-bold" target=_blank>Cluebix Software</a></p> -->
     </div>
 </footer>
 

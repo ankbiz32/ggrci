@@ -195,10 +195,10 @@
             <p class="cpy">
                 <span>Copyright </span> &copy; 2020 | All rights reserved with<strong> Gyan Ganga Educational Academy</strong>
              </p>
-             <p class="powered">
+             <!-- <p class="powered">
                  Powered by : 
                  <strong><a href="https://cluebix.com" target="_blank">Cluebix Software</a></strong>
-             </p>
+             </p> -->
         </div>
     </footer>
 

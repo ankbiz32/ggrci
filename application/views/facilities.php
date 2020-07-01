@@ -11,7 +11,7 @@
             <div class="content">
                 <h3>The foundation school</h3>
                 <p>
-                    Gyan Ganga educational Academic welcomes the tiny tots at the age of 3 1/2 years. The school offers safe, secured, pollution free atmosphere in which they can learn from a variety of experiences. They are given knowledge of alphabet & numbers and are taught the basic skills like  reading, writing  and arithmetic at this stage. Emphasis is laid on development of their conversational ability and encourage them to participate in various educational and co‑curricular activities. Young children are active learners and thus operate most effectively work‑experience and play‑way methods of learning, which are adopted in the school.
+                    Gyan Ganga educational Academic welcomes the tiny tots at the age of 3 1/2 years. The school offers safe, secured, pollution free atmosphere in which they can learn from a variety of experiences. They are given knowledge of alphabet & numbers and are taught the basic skills like reading, writing and arithmetic at this stage. Emphasis is laid on development of their conversational ability and encourage them to participate in various educational and cocurricular activities. Young children are active learners and thus operate most effectively workexperience and playway methods of learning, which are adopted in the school.
                 </p>
             </div>
             <img src="<?=base_url()?>assets/images/foundation.jpg" alt="Foundation">
@@ -23,7 +23,7 @@
             <div class="content">
                 <h3>The Campus</h3>
                 <p>
-                    The School campus is very conspicuously situated on a 20 acre plot of land, 12 Kms. away from the heart of the city, on Raipur ‑ Baloda Bazaar State Highway with open surroundings in a healthy, beautiful and congenial environment amidst lush green lawns, flower garden and plantation with various trees along the fenced perimeter The infrastructure consists of an Administrative Block, Academic Block, Hostel Blacks with excellent sanitary arrangements for 230 students, two large dining Halls to accommodate 400 students at a time and all other utilities including the school's own filtered water supply with cool potable drinking water An Auditorium for various cultural activities and competitions adds to the basic day‑to‑day needs of the Academy. The School Building has large sized class rooms which are fully furnished and ventilated. Play things like slides, swings, see‑saws and a modern swimming pool are the added attraction.
+                    The School campus is very conspicuously situated on a 20-acre plot of land, 12 Kms. away from the heart of the city, on Raipur ‑ Baloda Bazaar State Highway with open surroundings in a healthy, beautiful and congenial environment amidst lush green lawns, flower garden and plantation with various trees along the fenced perimeter. The infrastructure consists of an Administrative Block, Academic Block, Hostel Blocks with excellent sanitary arrangements for 230 students, two large dining halls to accommodate 400 students at a time and all other utilities including the school's own filtered water supply with cool potable drinking water. An Auditorium for various cultural activities and competitions adds to the basic day‑to‑day needs of the Academy. The School Building has large sized classrooms which are fully furnished and ventilated. Playthings like slides, swings, see‑saws and a modern swimming pool are the added attraction.
                 </p>
             </div>
             <img class='lazyload' data-src="<?=base_url()?>assets/images/campus.jpg" alt="Campus">
@@ -61,7 +61,7 @@
             <div class="content">
                 <h3>Mess facility</h3>
                 <p>
-                    The Academy has excellent arrangement of nutritious lunch in its well furnished dining hall. The preparations are purely vegetarian, rich in food‑value and balanced calories containing adequate quantities of ghee, curd, fruit, salad and green vegetables etc. The menu is prepared by the school dietician. The cooking is done by expert hands under close supervision. The mess facility provided is optional and on monthly chargeable basis to Day boarders.
+                    The Academy has excellent arrangement of nutritious lunch in its well-furnished dining hall. The preparations are purely vegetarian, rich in foodvalue and balanced calories containing adequate quantities of ghee, curd, fruit, salad and green vegetables etc. The menu is prepared by the school dietician. The cooking is done by expert hands under close supervision. The mess facility provided is optional and on monthly chargeable basis to day boarders.
                 </p>
             </div>
             <img class='lazyload' data-src="<?=base_url()?>assets/images/mess.jpg" alt="Campus">
@@ -97,7 +97,7 @@
             <div class="content">
                 <h3>Health & medical fitness</h3>
                 <p>
-                    For proper health care and periodical check‑up, the school has a Medical officer It has a 8 bedded hospital with resident trained Nurse for first‑aid, emergency treatment and temporary hospitalisation. in case of emergency and serious ailments arrangements are made with the Nursing Homes, where the services of specialist, surgeons and physicians may be secured, as necessary. These will, however, be at the cost of parents. A progressive record of immunization, ailments and treatments is maintained on a Health Card for each student and kept in the Hostel.
+                    For proper health care and periodical checkup, the school has a Medical officer It has a 8 bedded hospital with resident trained nurse for firstaid, emergency treatment and temporary hospitalisation. In case of emergency and serious ailments arrangements are made with the Nursing Homes, where the services of specialist, surgeons and physicians may be secured, as necessary. These will, however, be at the cost of parents. A progressive record of immunization, ailments and treatments is maintained on a Health Card for each student and kept in the Hostel.
                 </p>
             </div>
             <img class='lazyload' data-src="<?=base_url()?>assets/images/hospital.jpg" alt="Campus">
@@ -121,7 +121,7 @@
             <div class="content">
                 <h3>Games & Sports</h3>
                 <p>
-                    The school accords highest priority to games, sports and physical training. A 5 acre plot of land is developed as sports complex. Facilities are available for all indoor games like Table‑Tennis, Badminton, Billiards, Cartoon, Chess etc. and field games like Hockey, Foot ball, Cricket, Basket ball, Volley ball, Hand ball, Kabaddi, Kho‑Kho, Lawn‑Tennis and swimming pool. The students are encouraged to participate in various activities and eventually choose their own event of specialisation. Outstanding players and teams are trained and coached by organising camps to prepare them for competition, at State and National level. The school provides separate coaches for separate games.
+                    The school accords highest priority to games, sports and physical training. A 5-acre plot of land is developed as sports complex. Facilities are available for all indoor games like TableTennis, Badminton, Billiards, Cartoon, Chess etc. Field games like Hockey, Football, Cricket, Basketball, Volleyball, Hand ball, Kabaddi, KhoKho, LawnTennis and swimming pool. The students are encouraged to participate in various activities and eventually choose their own event of specialisation. Outstanding players and teams are trained and coached by organising camps to prepare them for competition, at State and National level. The school provides separate coaches for separate games.
                 </p>
             </div>
             <img class='lazyload' data-src="<?=base_url()?>assets/images/sports.jpg" alt="Campus">

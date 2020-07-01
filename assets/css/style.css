@@ -163,7 +163,9 @@ a.see-all:hover {
   border: 1px solid #075dad;
   background-color: #075dad;
 }
-
+.logo-bar{
+  z-index: 30;
+}
 .logo-bar .wrapper {
   padding: 1rem 0;
   display: -webkit-box;
@@ -1845,6 +1847,12 @@ footer .lfooter .powered a:hover::after {
   margin-right: 3rem;
 }
 
+.contact2{
+  background: none !important;
+}
+.contact2::after{
+  background: none !important;
+}
 .contact2 .wrapper h2 {
   color: black;
 }
@@ -2334,7 +2342,7 @@ footer .lfooter .powered a:hover::after {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 3;
+    z-index: 30;
     -webkit-transition: all 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.745);
     transition: all 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.745);
   }

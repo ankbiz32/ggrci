@@ -103,7 +103,7 @@
                 The quality Policy
             </h2>
             <p>
-                We are committed and determined to mould the students into the cast: of an upright citizen by providing holistic education through continual improvement in different educational frame work, so that they should enrich their confidence to face the new challenges of global era with a view to prove their excellence in education and community services, there by enhancing satisfaction level of all concerned.
+                We are committed and determined to mould the students into the cast of an upright citizen by providing holistic education through continual improvement in different educational frame work, so that they should enrich their confidence to face the new challenges of global era with a view to prove their excellence in education and community services, thereby enhancing satisfaction level of all concerned.
             </p>
             <div class="qps">
                 <div class="qp">
