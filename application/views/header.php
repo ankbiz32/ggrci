@@ -79,7 +79,17 @@
                 <li class="sm-show nowrap"><a href="<?=base_url('TC')?>" class="<?=$this->uri->segment(1)=="TC"?'active':''?>">Transfer Certificate</a></li>
                 <li><a href="<?=base_url('Facilities')?>" class="<?=$this->uri->segment(1)=="Facilities"?'active':''?>">Facilities</a></li>
                 <li><a href="<?=base_url('Gallery')?>" class="<?=$this->uri->segment(1)=="Gallery"?'active':''?>">Gallery</a></li>
-                <li><a href="<?=base_url('Legal')?>" class="<?=$this->uri->segment(1)=="Legal"?'active':''?>">Legal</a></li>
+                <!-- <li><a href="<?=base_url('Legal')?>" class="<?=$this->uri->segment(1)=="Legal"?'active':''?>">Legal</a></li> -->
+
+                <li class="dropdown sm-hide nowrap">
+                    <a class="<?=$this->uri->segment(1)=="Legal"?'active':''?>">Legal <i class="fa fa-caret-down fa-sm"></i></a>
+                    <div class="submenu">
+                        <a href="<?=base_url('Legal')?>">Legal</a>
+                        <a href="<?=base_url('Legal/Disclosure')?>">Mandatory disclosure</a>
+                        <a href="<?=base_url('Legal/Fees')?>">Fee structure</a>
+                    </div>
+                </li>
+
                 <li><a href="<?=base_url('Contact')?>" class="<?=$this->uri->segment(1)=="Contact"?'active':''?>">Contact</a></li>
             </ul>
         </div>

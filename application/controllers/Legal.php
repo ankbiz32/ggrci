@@ -14,4 +14,20 @@ class Legal extends MY_Controller {
 		$this->load->view('legal');
 		$this->load->view('footer');
 	}
+
+	public function Disclosure()
+	{
+		$profile=$this->fetch->getWebProfile();
+		$this->load->view('header',['web'=>$profile , 'title'=>'Mandatory disclosure']);
+		$this->load->view('disclosure');
+		$this->load->view('footer');
+	}
+
+	public function Fees()
+	{
+		$profile=$this->fetch->getWebProfile();
+		$this->load->view('header',['web'=>$profile , 'title'=>'Fee structure']);
+		$this->load->view('fees');
+		$this->load->view('footer');
+	}
 }
