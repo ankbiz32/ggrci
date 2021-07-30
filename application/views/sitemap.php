@@ -48,6 +48,16 @@
             <priority>0.64</priority>
         </url>
         <url>
+            <loc><?=base_url()?>Legal/Fees</loc>
+            <lastmod><?=$mod?></lastmod>
+            <priority>0.64</priority>
+        </url>
+        <url>
+            <loc><?=base_url()?>Legal/Disclosure</loc>
+            <lastmod><?=$mod?></lastmod>
+            <priority>0.64</priority>
+        </url>
+        <url>
             <loc><?=base_url()?>Contact</loc>
             <lastmod><?=$mod?></lastmod>
             <priority>0.64</priority>

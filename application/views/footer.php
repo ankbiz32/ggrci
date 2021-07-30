@@ -185,6 +185,7 @@
                         <p><a href="<?=base_url('Contact')?>">Contact</a></p>
                         <p><a href="<?=base_url('Admissions')?>">Admissions</a></p>
                         <p><a href="<?=base_url('Facilities')?>">Facilities</a></p>
+                        <p><a href="<?=base_url('Legal/Disclosure')?>">Mandatory Disclosure</a></p>
                         <p><a href="<?=base_url('TC')?>">TC</a></p>
                         <p><a href="<?=base_url('sitemap.xml')?>" target="_blank">Sitemap</a></p>
                     </div>

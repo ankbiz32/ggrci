@@ -89,6 +89,8 @@
                         <a href="<?=base_url('Legal/Fees')?>">Fee structure</a>
                     </div>
                 </li>
+                <li class="sm-show"><a href="<?=base_url('Legal')?>" class="<?=($this->uri->segment(1)=="Legal" AND $this->uri->segment(2)=="")?'active':''?>">Legal</a></li>
+                <li class="sm-show nowrap"><a href="<?=base_url('Legal/Fees')?>" class="<?=$this->uri->segment(2)=="Fees"?'active':''?>">Fee Structure</a></li>
 
                 <li><a href="<?=base_url('Contact')?>" class="<?=$this->uri->segment(1)=="Contact"?'active':''?>">Contact</a></li>
             </ul>
